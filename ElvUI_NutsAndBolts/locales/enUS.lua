@@ -8,7 +8,7 @@ L["%s is a collection of my plugins in Tukui.org / Twitch"] = true
 L["Information / Help"] = true
 L["Please use the following links if you need help or wish to know more about this AddOn."] = true
 L["AddOn Description"] = true
-L["Report Bugs / Request more Nuts & Bolts"]L["Report Bugs or Request more Nuts & Bolts"] = true
+L["Report Bugs / Request more Nuts & Bolts"] = true
 
 -- Location Lite
 L[".:: LocationPlus - LocationLite ::.\nIt's not wise to use both Plus and Lite versions."] = true
