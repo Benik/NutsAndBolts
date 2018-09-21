@@ -1,0 +1,4 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<script file="DatabarColors.lua"/>
+	<script file="options_DatabarColors.lua"/>
+</Ui>

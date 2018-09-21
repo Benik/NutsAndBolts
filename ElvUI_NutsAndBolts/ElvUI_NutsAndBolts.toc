@@ -1,0 +1,13 @@
+## Interface: 80000
+## Author: Benik
+## Version: 1.0
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts & Bolts|r
+## Notes: Various ElvUI Enhancements
+## RequiredDeps: ElvUI
+## DefaultState: Enabled
+## OptionalDeps: SharedMedia
+
+locales\load_locales.xml
+core\load_core.xml
+modules\load_modules.xml
+

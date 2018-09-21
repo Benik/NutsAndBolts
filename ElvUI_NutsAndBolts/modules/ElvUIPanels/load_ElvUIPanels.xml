@@ -1,0 +1,4 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<script file="ElvUIPanels.lua"/>
+	<script file="options_ElvUIPanels.lua"/>
+</Ui>
