@@ -8,6 +8,6 @@
 ## OptionalDeps: SharedMedia
 
 locales\load_locales.xml
-core\load_core.xml
+core.lua
 modules\load_modules.xml
 
