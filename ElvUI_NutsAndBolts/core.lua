@@ -15,6 +15,11 @@ function ENB:cOption(name)
 	return (color):format(name)
 end
 
+local color = { r = 1, g = 1, b = 1, a = 1 }
+function ENB:unpackColor(color)
+	return color.r, color.g, color.b, color.a
+end
+
 -- Options
 function ENB:ConfigTable()
 	E.Options.args.NutsAndBolts = {

@@ -212,6 +212,7 @@ local function ConfigTable()
 				order = 7,
 				type = "group",
 				name = L["Location Panel"],
+				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable end,
 				args = {
 					largeHeight = {
 						order = 1,
@@ -293,6 +294,7 @@ local function ConfigTable()
 				order = 8,
 				type = "group",
 				name = L["Coordinates"],
+				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable end,
 				args = {
 					doubleDigit = {
 						order = 1,

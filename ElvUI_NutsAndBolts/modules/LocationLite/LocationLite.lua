@@ -1,4 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI);
+local ENB = E:GetModule("NutsAndBolts");
 local mod = E:NewModule('NB_LocationLite', 'AceTimer-3.0');
 local LSM = LibStub("LibSharedMedia-3.0");
 
@@ -95,11 +96,6 @@ local function OnClick(self, btn)
 	if btn == "RightButton" then
 		E:ToggleConfig()
 	end
-end
-
-local color = { r = 1, g = 1, b = 1 }
-local function unpackColor(color)
-	return color.r, color.g, color.b
 end
 
 -- Location panel
@@ -318,7 +314,7 @@ function mod:UpdateLocation()
 		elseif db.customColor == 2 then
 			NB_LocationLitePanel.Text:SetTextColor(classColor.r, classColor.g, classColor.b)
 		else
-			NB_LocationLitePanel.Text:SetTextColor(unpackColor(db.userColor))
+			NB_LocationLitePanel.Text:SetTextColor(ENB:unpackColor(db.userColor))
 		end
 	end
 	
@@ -347,7 +343,7 @@ function mod:LocationColor()
 	elseif db.customColor == 2 then
 		NB_LocationLitePanel.Text:SetTextColor(classColor.r, classColor.g, classColor.b)
 	else
-		NB_LocationLitePanel.Text:SetTextColor(unpackColor(db.userColor))
+		NB_LocationLitePanel.Text:SetTextColor(ENB:unpackColor(db.userColor))
 	end
 end
 
@@ -366,14 +362,14 @@ end
 function mod:LiteCoordsColor()
 	local db = E.db.NutsAndBolts.LocationLite
 	if db.customCoordsColor == 1 then
-		NB_XCoords.Text:SetTextColor(unpackColor(db.userColor))
-		NB_YCoords.Text:SetTextColor(unpackColor(db.userColor))			
+		NB_XCoords.Text:SetTextColor(ENB:unpackColor(db.userColor))
+		NB_YCoords.Text:SetTextColor(ENB:unpackColor(db.userColor))			
 	elseif db.customCoordsColor == 2 then
 		NB_XCoords.Text:SetTextColor(classColor.r, classColor.g, classColor.b)
 		NB_YCoords.Text:SetTextColor(classColor.r, classColor.g, classColor.b)
 	else
-		NB_XCoords.Text:SetTextColor(unpackColor(db.userCoordsColor))
-		NB_YCoords.Text:SetTextColor(unpackColor(db.userCoordsColor))
+		NB_XCoords.Text:SetTextColor(ENB:unpackColor(db.userCoordsColor))
+		NB_YCoords.Text:SetTextColor(ENB:unpackColor(db.userCoordsColor))
 	end
 end
 
