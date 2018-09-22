@@ -411,6 +411,8 @@ function mod:Initialize()
 	NB_LocationLitePanel:RegisterEvent("PLAYER_REGEN_ENABLED")
 	NB_LocationLitePanel:RegisterEvent("PET_BATTLE_CLOSE")
 	NB_LocationLitePanel:RegisterEvent("PET_BATTLE_OPENING_START")
+
+	self.initialized = true
 end
 
 local function InitializeCallback()

@@ -20,6 +20,13 @@ function ENB:unpackColor(color)
 	return color.r, color.g, color.b, color.a
 end
 
+function ENB:IsAddOnEnabled(addon) -- Credit: Azilroka
+	return GetAddOnEnableState(E.myname, addon) == 2
+end
+
+-- Check other addons
+ENB.LL = ENB:IsAddOnEnabled('ElvUI_LocLite')
+
 -- Options
 function ENB:ConfigTable()
 	E.Options.args.NutsAndBolts = {

@@ -69,7 +69,7 @@ local function ConfigTable()
 				order = 5,
 				type = "group",
 				name = L["General"],
-				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable end,
+				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
 				args = {
 					combatHide = {
 						order = 1,
@@ -118,7 +118,7 @@ local function ConfigTable()
 				order = 6,
 				type = "group",
 				name = L["Layout"],
-				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable end,
+				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
 				args = {
 					transparency = {
 						order = 1,
@@ -212,7 +212,7 @@ local function ConfigTable()
 				order = 7,
 				type = "group",
 				name = L["Location Panel"],
-				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable end,
+				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
 				args = {
 					largeHeight = {
 						order = 1,
@@ -294,7 +294,7 @@ local function ConfigTable()
 				order = 8,
 				type = "group",
 				name = L["Coordinates"],
-				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable end,
+				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
 				args = {
 					doubleDigit = {
 						order = 1,
