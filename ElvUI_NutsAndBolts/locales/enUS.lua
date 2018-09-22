@@ -21,7 +21,7 @@ L["AsphyxiaUI Style"] = true
 L["Auto Colorize"] = true
 L["Auto resized Location Panel."] = true
 L["Auto width"] = true
-L["BenikUI Style"]= true
+L["BenikUI Style"] = true
 L["Choose font for the Location and Coords panels."] = true
 L["Coordinates"] = true
 L["Detailed Coords"] = true
@@ -45,4 +45,7 @@ L["Truncates the text rather than auto enlarge the location panel when the text 
 L["Update Timer"] = true
 L["Use Custom Location Color"] = true
 L["Zone and Subzone"] = true
-L["\nPlease choose which one to disable."] = true
+
+-- Databar Colors
+L['DataBar Colors'] = true
+L["This module can alter ElvUI Databar statusbars to any color"] = true
