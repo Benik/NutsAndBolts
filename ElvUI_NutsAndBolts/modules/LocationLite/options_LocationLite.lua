@@ -161,7 +161,7 @@ local function ConfigTable()
 						type = 'toggle',
 						disabled = function() return not E.db.NutsAndBolts.LocationLite.noBackdrop or E.db.NutsAndBolts.LocationLite.asphyxiaStyle end,
 						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:LiteTransparent(); end,	
+						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:ToggleTransparency(); end,	
 					},
 					noBackdrop = {
 						order = 2,
@@ -169,7 +169,7 @@ local function ConfigTable()
 						desc = L["Hides all panels background so you can place them on ElvUI's top or bottom panel."],
 						type = 'toggle',
 						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:LocLiteUpdate(); end,
+						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:UpdateLayout(); end,
 					},
 					shadows = {
 						order = 3,
@@ -178,7 +178,7 @@ local function ConfigTable()
 						type = 'toggle',
 						disabled = function() return not E.db.NutsAndBolts.LocationLite.noBackdrop end,
 						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:LiteShadow(); end,					
+						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:ToggleShadows(); end,					
 					},
 					asphyxiaStyle = {
 						order = 4,
@@ -186,7 +186,7 @@ local function ConfigTable()
 						type = 'toggle',
 						disabled = function() return not E.db.NutsAndBolts.LocationLite.noBackdrop end,
 						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:LiteAsphyxia(); end,					
+						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:ToggleAsphyxiaStyle(); end,					
 					},
 					benikuiStyle = {
 						order = 5,
@@ -326,7 +326,7 @@ local function ConfigTable()
 						set = function(info, r, g, b)
 							local t = E.db.NutsAndBolts["LocationLite"][ info[#info] ]
 							t.r, t.g, t.b = r, g, b
-							mod:LiteCoordsColor()
+							mod:ToggleCoordsColor()
 						end,
 					},
 
@@ -344,7 +344,7 @@ local function ConfigTable()
 						desc = L["Adds 2 digits in the coords"],
 						type = 'toggle',
 						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:LiteCoordsDig() end,					
+						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:ToggleCoordsDigit() end,					
 					},
 					spacer = {
 						order = 2,
@@ -361,7 +361,7 @@ local function ConfigTable()
 							[3] = CUSTOM,
 						},
 						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:LiteCoordsColor() end,
+						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:ToggleCoordsColor() end,
 					},
 					userCoordsColor = {
 						order = 4,
@@ -375,7 +375,7 @@ local function ConfigTable()
 						set = function(info, r, g, b)
 							local t = E.db.NutsAndBolts["LocationLite"][ info[#info] ]
 							t.r, t.g, t.b = r, g, b
-							mod:LiteCoordsColor() 
+							mod:ToggleCoordsColor() 
 						end,
 					},
 				},

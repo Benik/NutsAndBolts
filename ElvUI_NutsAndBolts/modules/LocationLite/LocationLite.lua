@@ -3,7 +3,7 @@ local ENB = E:GetModule("NutsAndBolts");
 local mod = E:NewModule('NB_LocationLite', 'AceTimer-3.0');
 local LSM = LibStub("LibSharedMedia-3.0");
 
-local format, tonumber, pairs, print = string.format, tonumber, pairs, print
+local format, tonumber, pairs, tinsert = string.format, tonumber, pairs, table.insert
 
 local CreateFrame, ToggleFrame = CreateFrame, ToggleFrame
 local GetZonePVPInfo = GetZonePVPInfo
@@ -28,6 +28,8 @@ local classColor = E.myclass == 'PRIEST' and E.PriestColors or (CUSTOM_CLASS_COL
 local function PanelOnFade()
 	NB_LocationLitePanel:Hide()
 end
+
+local panels = {}
 
 -- AutoColoring
 local function AutoColoring()
@@ -110,6 +112,7 @@ local function CreateMainPanel()
 	loc_panel:SetFrameLevel(2)
 	loc_panel:EnableMouse(true)
 	loc_panel:SetScript('OnMouseUp', OnClick)
+	tinsert(panels, NB_LocationLitePanel)
 
 	-- Location Text
 	loc_panel.Text = loc_panel:CreateFontString(nil, "LOW")
@@ -141,6 +144,33 @@ local function CreateMainPanel()
 	E:CreateMover(NB_LocationLitePanel, "NB_LocationLiteMover", L["Location Lite"])
 end
 
+-- Coord panels
+local function CreateCoordPanels()
+	local db = E.db.NutsAndBolts.LocationLite
+
+	-- X Coord panel
+	local coordsX = CreateFrame('Frame', "NB_XCoords", NB_LocationLitePanel)
+	coordsX:Width(COORDS_WIDTH)
+	coordsX:Height(db.height or 21)
+	coordsX.Text = coordsX:CreateFontString(nil, "LOW")
+	coordsX.Text:SetAllPoints()
+	coordsX.Text:SetJustifyH("CENTER")
+	coordsX.Text:SetJustifyV("MIDDLE")
+	tinsert(panels, NB_XCoords)
+
+	-- Y Coord panel
+	local coordsY = CreateFrame('Frame', "NB_YCoords", NB_LocationLitePanel)
+	coordsY:Width(COORDS_WIDTH)
+	coordsY:Height(db.height or 21)
+	coordsY.Text = coordsY:CreateFontString(nil, "LOW")
+	coordsY.Text:SetAllPoints()
+	coordsY.Text:SetJustifyH("CENTER")
+	coordsY.Text:SetJustifyV("MIDDLE")
+	tinsert(panels, NB_YCoords)
+	
+	mod:ToggleCoordsColor()
+end
+
 -- all panels height
 function mod:LiteDTHeight()
 	local db = E.db.NutsAndBolts.LocationLite
@@ -159,19 +189,17 @@ end
 function mod:CoordPanelFont()
 	local db = E.db.NutsAndBolts.LocationLite
 
-	local panelsToFont = {NB_LocationLitePanel, NB_XCoords, NB_YCoords}
-	for _, frame in pairs(panelsToFont) do
+	for _, frame in pairs(panels) do
 		frame.Text:SetFont(LSM:Fetch("font", db.font), db.fontSize, db.fontFlags)
 	end	
 
 end
 
 -- Toggle transparency
-function mod:LiteTransparent()
+function mod:ToggleTransparency()
 	local db = E.db.NutsAndBolts.LocationLite
-	local panelsToAddTrans = {NB_LocationLitePanel, NB_XCoords, NB_YCoords}
 	
-	for _, frame in pairs(panelsToAddTrans) do
+	for _, frame in pairs(panels) do
 		frame:SetTemplate('NoBackdrop')
 		if not db.noBackdrop then
 			db.shadows = false
@@ -186,11 +214,10 @@ function mod:LiteTransparent()
 end
 
 -- Enable/Disable shadows
-function mod:LiteShadow()
+function mod:ToggleShadows()
 	local db = E.db.NutsAndBolts.LocationLite
-	local panelsToAddShadow = {NB_LocationLitePanel, NB_XCoords, NB_YCoords}
 	
-	for _, frame in pairs(panelsToAddShadow) do
+	for _, frame in pairs(panels) do
 	frame:CreateShadow('Default')
 		if db.shadows then
 			frame.shadow:Show()
@@ -213,7 +240,7 @@ function mod:LiteShadow()
 	NB_YCoords:Point('LEFT', NB_LocationLitePanel, 'RIGHT', SPACING, 0)
 end
 
-function mod:LiteAsphyxia()
+function mod:ToggleAsphyxiaStyle()
 	local db = E.db.NutsAndBolts.LocationLite
 	local SPACING
 	
@@ -232,37 +259,12 @@ function mod:LiteAsphyxia()
 		NB_YCoords.Text:Point("CENTER", 1, 0)
 	end
 
-	self:LiteShadow()
+	self:ToggleShadows()
 	self:LiteDTHeight()
-	self:LiteTransparent()
+	self:ToggleTransparency()
 	
 	NB_XCoords:Point('RIGHT', NB_LocationLitePanel, 'LEFT', -SPACING, 0)
 	NB_YCoords:Point('LEFT', NB_LocationLitePanel, 'RIGHT', SPACING, 0)
-end
-
--- Coord panels
-local function CreateCoordPanels()
-	local db = E.db.NutsAndBolts.LocationLite
-
-	-- X Coord panel
-	local coordsX = CreateFrame('Frame', "NB_XCoords", NB_LocationLitePanel)
-	coordsX:Width(COORDS_WIDTH)
-	coordsX:Height(db.height or 21)
-	coordsX.Text = coordsX:CreateFontString(nil, "LOW")
-	coordsX.Text:SetAllPoints()
-	coordsX.Text:SetJustifyH("CENTER")
-	coordsX.Text:SetJustifyV("MIDDLE")
-
-	-- Y Coord panel
-	local coordsY = CreateFrame('Frame', "NB_YCoords", NB_LocationLitePanel)
-	coordsY:Width(COORDS_WIDTH)
-	coordsY:Height(db.height or 21)
-	coordsY.Text = coordsY:CreateFontString(nil, "LOW")
-	coordsY.Text:SetAllPoints()
-	coordsY.Text:SetJustifyH("CENTER")
-	coordsY.Text:SetJustifyV("MIDDLE")
-	
-	mod:LiteCoordsColor()
 end
 
 function mod:UpdateCoords()
@@ -348,7 +350,7 @@ function mod:LocationColor()
 end
 
 -- Coord panels width
-function mod:LiteCoordsDig()
+function mod:ToggleCoordsDigit()
 	local db = E.db.NutsAndBolts.LocationLite
 	if db.doubleDigit then
 		NB_XCoords:Width(COORDS_WIDTH*1.5)
@@ -359,7 +361,7 @@ function mod:LiteCoordsDig()
 	end
 end
 
-function mod:LiteCoordsColor()
+function mod:ToggleCoordsColor()
 	local db = E.db.NutsAndBolts.LocationLite
 	if db.customCoordsColor == 1 then
 		NB_XCoords.Text:SetTextColor(ENB:unpackColor(db.userColor))
@@ -387,7 +389,6 @@ end
 function mod:ToggleBenikuiStyle()
 	if not ENB.BU then return end
 	local db = E.db.NutsAndBolts.LocationLite
-	local panels = {NB_LocationLitePanel, NB_XCoords, NB_YCoords}
 
 	for _, frame in pairs(panels) do
 		if frame and frame.style then
@@ -402,7 +403,6 @@ end
 
 function mod:BenikuiStyle()
 	if not ENB.BU then return end
-	local panels = {NB_LocationLitePanel, NB_XCoords, NB_YCoords}
 
 	for _, frame in pairs(panels) do
 		if frame then
@@ -412,12 +412,12 @@ function mod:BenikuiStyle()
 end
 
 -- Update changes
-function mod:LocLiteUpdate()
-	self:LiteTransparent()
-	self:LiteShadow()
-	self:LiteCoordsDig()
-	self:LiteCoordsColor()
-	self:LiteAsphyxia()
+function mod:UpdateLayout()
+	self:ToggleTransparency()
+	self:ToggleShadows()
+	self:ToggleCoordsDigit()
+	self:ToggleCoordsColor()
+	self:ToggleAsphyxiaStyle()
 	self:ToggleBenikuiStyle()
 end
 
@@ -428,7 +428,7 @@ end
 function mod:Initialize()
 	CreateMainPanel()
 	CreateCoordPanels()
-	self:LocLiteUpdate()
+	self:UpdateLayout()
 	self:CoordPanelFont()
 	self:ToggleBlizZoneText()
 	self:TimerUpdate()
