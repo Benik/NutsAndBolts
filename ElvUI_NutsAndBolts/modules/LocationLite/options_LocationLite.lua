@@ -53,11 +53,14 @@ end
 local function ConfigTable()
 	local description = ""
 	local addonString = GetAddonString()
+	local LiteNote = L["|cff00c0faNOTE:|r The standalone Location Lite is not gonna be available anymore either on Twitch or Tukui.org."]
 
 	if ENB.LL or ENB.LP then
 		description = format(L["It looks like %s is loaded. If you would like to disable it, then click on the button below."], ENB:cOption(addonstring))
-	else
-		description = " "
+	end
+
+	if ENB.LL then
+		description = description.."\n"..LiteNote
 	end
 
 	E.Options.args.NutsAndBolts.args.LocationLite = {

@@ -35,6 +35,7 @@ L["Location Lite"] = true
 L["Location Panel"] = true
 L["Location Plus"] = true
 L["LocationLite adds a movable player location panel"] = true
+L["|cff00c0faNOTE:|r The standalone Location Lite is not gonna be available anymore either on Twitch or Tukui.org."] = true
 L["Set the font size."] = true
 L["Shadows"] = true
 L["Show/Hide all panels when in combat"] = true
