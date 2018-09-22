@@ -27,6 +27,7 @@ end
 -- Check other addons
 ENB.LL = ENB:IsAddOnEnabled('ElvUI_LocLite')
 ENB.LP = ENB:IsAddOnEnabled('ElvUI_LocPlus')
+ENB.BU = ENB:IsAddOnEnabled('ElvUI_BenikUI')
 
 -- Options
 function ENB:ConfigTable()

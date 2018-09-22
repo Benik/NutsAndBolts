@@ -5,7 +5,7 @@
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
-## OptionalDeps: SharedMedia
+## OptionalDeps: SharedMedia, ElvUI_BenikUI
 
 locales\load_locales.xml
 core.lua

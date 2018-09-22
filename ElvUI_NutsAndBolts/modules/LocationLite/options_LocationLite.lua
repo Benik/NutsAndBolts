@@ -18,6 +18,7 @@ P["NutsAndBolts"]["LocationLite"] = {
 	['hideDefaultZonetext'] = true,
 -- Layout
 	['asphyxiaStyle'] = false,
+	['benikuiStyle'] = true,
 	['shadows'] = false,
 	['transparency'] = true,
 	['noBackdrop'] = true,
@@ -187,8 +188,16 @@ local function ConfigTable()
 						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
 						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:LiteAsphyxia(); end,					
 					},
-					panels = {
+					benikuiStyle = {
 						order = 5,
+						name = L["BenikUI Style"],
+						type = 'toggle',
+						disabled = function() return not E.db.NutsAndBolts.LocationLite.noBackdrop or not ENB.BU end,
+						get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
+						set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; mod:ToggleBenikuiStyle(); end,					
+					},
+					panels = {
+						order = 6,
 						type = "group",
 						name = L["Size"],
 						guiInline = true,
@@ -205,7 +214,7 @@ local function ConfigTable()
 						},
 					},
 					font = {
-						order = 6,
+						order = 7,
 						type = "group",
 						name = L["Fonts"],
 						guiInline = true,

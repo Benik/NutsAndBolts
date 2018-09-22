@@ -384,6 +384,33 @@ function mod:ToggleBlizZoneText()
 	end
 end
 
+function mod:ToggleBenikuiStyle()
+	if not ENB.BU then return end
+	local db = E.db.NutsAndBolts.LocationLite
+	local panels = {NB_LocationLitePanel, NB_XCoords, NB_YCoords}
+
+	for _, frame in pairs(panels) do
+		if frame and frame.style then
+			if db.benikuiStyle then
+				frame.style:Show()
+			else
+				frame.style:Hide()
+			end
+		end
+	end
+end
+
+function mod:BenikuiStyle()
+	if not ENB.BU then return end
+	local panels = {NB_LocationLitePanel, NB_XCoords, NB_YCoords}
+
+	for _, frame in pairs(panels) do
+		if frame then
+			frame:Style('Outside')
+		end
+	end
+end
+
 -- Update changes
 function mod:LocLiteUpdate()
 	self:LiteTransparent()
@@ -391,6 +418,7 @@ function mod:LocLiteUpdate()
 	self:LiteCoordsDig()
 	self:LiteCoordsColor()
 	self:LiteAsphyxia()
+	self:ToggleBenikuiStyle()
 end
 
 function mod:TimerUpdate()
@@ -404,6 +432,7 @@ function mod:Initialize()
 	self:CoordPanelFont()
 	self:ToggleBlizZoneText()
 	self:TimerUpdate()
+	self:BenikuiStyle()
 	self:ScheduleRepeatingTimer('UpdateLocation', 0.5)
 
 	NB_LocationLitePanel:RegisterEvent("PLAYER_REGEN_DISABLED")

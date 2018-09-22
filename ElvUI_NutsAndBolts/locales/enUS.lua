@@ -21,6 +21,7 @@ L["AsphyxiaUI Style"] = true
 L["Auto Colorize"] = true
 L["Auto resized Location Panel."] = true
 L["Auto width"] = true
+L["BenikUI Style"]= true
 L["Choose font for the Location and Coords panels."] = true
 L["Coordinates"] = true
 L["Detailed Coords"] = true
