@@ -15,7 +15,6 @@ function ENB:cOption(name)
 	return (color):format(name)
 end
 
-local color = { r = 1, g = 1, b = 1, a = 1 }
 function ENB:unpackColor(color)
 	return color.r, color.g, color.b, color.a
 end
@@ -66,16 +65,16 @@ function ENB:ConfigTable()
 				type = "input",
 				width = "full",
 				name = L["AddOn Description"],
-				get = function(info) return "https://www.tukui.org/addons.php?id=11" end, -- change the id
-				set = function(info) return "https://www.tukui.org/addons.php?id=11" end,
+				get = function() return "https://www.tukui.org/addons.php?id=11" end, -- change the id
+				set = function() return "https://www.tukui.org/addons.php?id=11" end,
 			},
 			tickets = {
 				order = 7,
 				type = "input",
 				width = "full",
 				name = L["Report Bugs or Request more Nuts & Bolts"],
-				get = function(info) return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
-				set = function(info) return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
+				get = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
+				set = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
 			},
 		},
 	}

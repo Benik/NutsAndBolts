@@ -3,9 +3,9 @@ local ENB = E:GetModule("NutsAndBolts");
 local mod = E:NewModule('NB_LocationLite', 'AceTimer-3.0');
 local LSM = LibStub("LibSharedMedia-3.0");
 
-local format, tonumber, pairs, tinsert = string.format, tonumber, pairs, table.insert
+local format, pairs, tinsert = string.format, pairs, table.insert
 
-local CreateFrame, ToggleFrame = CreateFrame, ToggleFrame
+local ToggleFrame = ToggleFrame
 local GetZonePVPInfo = GetZonePVPInfo
 local IsInInstance = IsInInstance
 local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
@@ -58,6 +58,8 @@ local function CreateCoords()
 	local db = E.db.NutsAndBolts.LocationLite
 	local mapID = C_Map_GetBestMapForUnit("player")
 	local mapPos = mapID and C_Map_GetPlayerMapPosition(mapID, "player")
+	local x, y = 0, 0
+
 	if mapPos then x, y = mapPos:GetXY() end
 
 	local dig
