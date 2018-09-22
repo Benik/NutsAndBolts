@@ -15,7 +15,6 @@ local ChatEdit_ChooseBoxForSend, ChatEdit_ActivateChat = ChatEdit_ChooseBoxForSe
 local GetSubZoneText = GetSubZoneText
 local UIFrameFadeOut, UIFrameFadeIn = UIFrameFadeOut, UIFrameFadeIn
 local IsShiftKeyDown = IsShiftKeyDown
-local DisableAddOn, IsAddOnLoaded, ReloadUI, StaticPopup_Show = DisableAddOn, IsAddOnLoaded, ReloadUI, StaticPopup_Show
 local WorldMapFrame = _G['WorldMapFrame']
 local UNKNOWN = UNKNOWN
 
