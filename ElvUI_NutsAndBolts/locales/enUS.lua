@@ -11,7 +11,6 @@ L["AddOn Description"] = true
 L["Report Bugs / Request more Nuts & Bolts"] = true
 
 -- Location Lite
-L[".:: LocationPlus - LocationLite ::.\nIt's not wise to use both Plus and Lite versions."] = true
 L["Adds 2 digits in the coords"] = true
 L["Adds 6 pixels at the Main Location Panel height."] = true
 L["Adjust All Panels Height."] = true
@@ -30,6 +29,7 @@ L["Enable/Disable layout with shadows."] = true
 L["Enable/Disable transparent layout."] = true
 L["Hide Blizzard Zone Text"] = true
 L["Hides all panels background so you can place them on ElvUI's top or bottom panel."] = true
+L["It looks like %s is loaded. TIP: It would be wise to disable it"] = true
 L["Larger Location Panel"] = true
 L["Location Lite"] = true
 L["Location Panel"] = true

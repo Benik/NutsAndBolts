@@ -37,6 +37,21 @@ P["NutsAndBolts"]["LocationLite"] = {
 }
 
 local function ConfigTable()
+	local description = ""
+	local addonString
+
+	if ENB.LL then
+		addonstring = L["Location Lite"]
+	elseif ENB.LP then
+		addonstring = L["Location Plus"]
+	end
+
+	if ENB.LL or ENB.LP then
+		description = format(L["It looks like %s is loaded. TIP: It would be wise to disable it"], ENB:cOption(addonstring))
+	else
+		description = " "
+	end
+
 	E.Options.args.NutsAndBolts.args.LocationLite = {
 		order = 10,
 		type = 'group',
@@ -63,7 +78,7 @@ local function ConfigTable()
 			spacer2 = {
 				order = 4,
 				type = "description",
-				name = "\n",
+				name = description.."\n",
 			},
 			general = {
 				order = 5,

@@ -398,7 +398,6 @@ function mod:TimerUpdate()
 end
 
 function mod:Initialize()
-	--if IsAddOnLoaded("ElvUI_LocPlus") then StaticPopup_Show("PlusLite") end
 	CreateMainPanel()
 	CreateCoordPanels()
 	self:LocLiteUpdate()
@@ -421,15 +420,3 @@ local function InitializeCallback()
 end
 
 E:RegisterModule(mod:GetName(), InitializeCallback)
-
-StaticPopupDialogs["PlusLite"] = {
-	text = L[".:: LocationPlus - LocationLite ::.\nIt's not wise to use both Plus and Lite versions."]..format("|cffff0000%s|r",L["\nPlease choose which one to disable."]),
-	button1 = L['Location Lite'],
-	button2 = L['LocationPlus'],
-	OnAccept = function() DisableAddOn("ElvUI_LocLite");ReloadUI() end,
-	OnCancel = function() DisableAddOn("ElvUI_LocPlus");ReloadUI() end,
-	timeout = 0,
-	whileDead = 1,
-	hideOnEscape = false,
-	preferredIndex = 3,
-}
