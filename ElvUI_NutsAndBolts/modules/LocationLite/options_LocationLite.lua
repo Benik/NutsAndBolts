@@ -36,18 +36,26 @@ P["NutsAndBolts"]["LocationLite"] = {
 	['fontFlags'] = "NONE",
 }
 
-local function ConfigTable()
-	local description = ""
+local function GetAddonString()
 	local addonString
 
 	if ENB.LL then
 		addonstring = L["Location Lite"]
 	elseif ENB.LP then
 		addonstring = L["Location Plus"]
+	else
+		addonstring = " "
 	end
+	
+	return addonString
+end
+
+local function ConfigTable()
+	local description = ""
+	local addonString = GetAddonString()
 
 	if ENB.LL or ENB.LP then
-		description = format(L["It looks like %s is loaded. TIP: It would be wise to disable it"], ENB:cOption(addonstring))
+		description = format(L["It looks like %s is loaded. If you would like to disable it, then click on the button below."], ENB:cOption(addonstring))
 	else
 		description = " "
 	end
@@ -80,8 +88,15 @@ local function ConfigTable()
 				type = "description",
 				name = description.."\n",
 			},
-			general = {
+			toggleButton = {
 				order = 5,
+				type = "execute",
+				name = DISABLE.." "..addonstring.."\n",
+				hidden = function() return not (ENB.LP or ENB.LL and true or false) end,
+				func = function() StaticPopup_Show("PlusLite", addonstring) end,
+			},
+			general = {
+				order = 6,
 				type = "group",
 				name = L["General"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
@@ -130,7 +145,7 @@ local function ConfigTable()
 				},
 			},
 			layout = {
-				order = 6,
+				order = 7,
 				type = "group",
 				name = L["Layout"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
@@ -224,7 +239,7 @@ local function ConfigTable()
 				},
 			},
 			locationPanel = {
-				order = 7,
+				order = 8,
 				type = "group",
 				name = L["Location Panel"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
@@ -306,7 +321,7 @@ local function ConfigTable()
 				},
 			},
 			coords = {
-				order = 8,
+				order = 9,
 				type = "group",
 				name = L["Coordinates"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
@@ -357,3 +372,23 @@ local function ConfigTable()
 	}
 end
 ENB.Config["LocationLite"] = ConfigTable
+
+StaticPopupDialogs["PlusLite"] = {
+	text = L["Are you sure you want to disable %s?"],
+	button1 = YES,
+	button2 = NO,
+	OnAccept = function() 
+		local addon
+		if ENB.LL then 
+			addon = "ElvUI_LocLite"
+		elseif ENB.LP then
+			addon = "ElvUI_LocPlus"
+		end
+		DisableAddOn(addon);ReloadUI()
+	end,
+	OnCancel = E.noop,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = false,
+	preferredIndex = 3,
+}
