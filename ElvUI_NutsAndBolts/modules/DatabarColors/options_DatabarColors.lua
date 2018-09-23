@@ -41,7 +41,7 @@ P["NutsAndBolts"]["DataBarColors"] = {
 
 local function ConfigTable()
 	E.Options.args.NutsAndBolts.args.DataBarColors = {
-		order = 30,
+		order = 20,
 		type = 'group',
 		name = L['DataBar Colors'],
 		childGroups = 'tab',
