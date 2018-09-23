@@ -219,7 +219,6 @@ function mod:ToggleShadows()
 	local db = E.db.NutsAndBolts.LocationLite
 	
 	for _, frame in pairs(panels) do
-	frame:CreateShadow('Default')
 		if db.shadows then
 			frame.shadow:Show()
 		else
@@ -402,9 +401,14 @@ function mod:ToggleBenikuiStyle()
 	end
 end
 
-function mod:BenikuiStyle()
-	if not ENB.BU then return end
+function mod:StyleAndShadows()
+	for _, frame in pairs(panels) do
+		if frame then
+			frame:CreateShadow('Default')
+		end
+	end
 
+	if not ENB.BU then return end
 	for _, frame in pairs(panels) do
 		if frame then
 			frame:Style('Outside')
@@ -429,11 +433,12 @@ end
 function mod:Initialize()
 	CreateMainPanel()
 	CreateCoordPanels()
+	self:StyleAndShadows()
 	self:UpdateLayout()
 	self:CoordPanelFont()
 	self:ToggleBlizZoneText()
 	self:TimerUpdate()
-	self:BenikuiStyle()
+
 	self:ScheduleRepeatingTimer('UpdateLocation', 0.5)
 
 	NB_LocationLitePanel:RegisterEvent("PLAYER_REGEN_DISABLED")
