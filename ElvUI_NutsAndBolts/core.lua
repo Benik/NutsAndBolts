@@ -27,6 +27,7 @@ end
 ENB.LL = ENB:IsAddOnEnabled('ElvUI_LocLite')
 ENB.LP = ENB:IsAddOnEnabled('ElvUI_LocPlus')
 ENB.BU = ENB:IsAddOnEnabled('ElvUI_BenikUI')
+ENB.DT = ENB:IsAddOnEnabled('ElvUI_DTColors')
 
 -- Options
 function ENB:ConfigTable()

@@ -53,3 +53,9 @@ L["This module can alter ElvUI Databar statusbars to any color"] = true
 -- ElvUI Panels
 L['ElvUI Panels'] = true
 L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"] = true
+
+-- DataText Colors
+L['DataText Color'] = true
+L["Are you sure you want to disable ElvUI_DTColors?"] = true
+L["This module can alter all ElvUI DataText text color"] = true
+L["It looks like ElvUI_DatatextColors addon is loaded. It is strongly suggested to disable it, by clicking the button below.\n|cff00c0faNOTE:|r The standalone ElvUI_DatatextColors addon is not gonna be available anymore on Tukui.org."] = true
