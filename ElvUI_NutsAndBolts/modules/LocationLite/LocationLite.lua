@@ -173,7 +173,7 @@ local function CreateCoordPanels()
 end
 
 -- all panels height
-function mod:LiteDTHeight()
+function mod:PanelsHeight()
 	local db = E.db.NutsAndBolts.LocationLite
 
 	if db.largeHeight then
@@ -261,7 +261,7 @@ function mod:ToggleAsphyxiaStyle()
 	end
 
 	self:ToggleShadows()
-	self:LiteDTHeight()
+	self:PanelsHeight()
 	self:ToggleTransparency()
 	
 	NB_XCoords:Point('RIGHT', NB_LocationLitePanel, 'LEFT', -SPACING, 0)
