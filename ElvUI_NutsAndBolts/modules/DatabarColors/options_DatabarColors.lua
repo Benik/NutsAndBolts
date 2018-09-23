@@ -84,12 +84,16 @@ local function ConfigTable()
 								order = 1,
 								type = 'toggle',
 								name = DEFAULT,
-								width = 'full',
 								get = function(info) return E.db.NutsAndBolts.DataBarColors.experience.color.default end,
 								set = function(info, value) E.db.NutsAndBolts.DataBarColors.experience.color.default = value; mod:ChangeXPcolor(); end,
 							},
-							xp = {
+							spacer = {
 								order = 2,
+								type = "header",
+								name = "",
+							},
+							xp = {
+								order = 3,
 								type = 'color',
 								hasAlpha = true,
 								name = COMBAT_XP_GAIN,
@@ -107,7 +111,7 @@ local function ConfigTable()
 								end,
 							},
 							rested = {
-								order = 3,
+								order = 4,
 								type = 'color',
 								hasAlpha = true,
 								name = TUTORIAL_TITLE26,
@@ -154,8 +158,13 @@ local function ConfigTable()
 								get = function(info) return E.db.NutsAndBolts.DataBarColors.azerite.color.default end,
 								set = function(info, value) E.db.NutsAndBolts.DataBarColors.azerite.color.default = value; mod:ChangeAzeriteColor(); end,
 							},
-							af = {
+							spacer = {
 								order = 2,
+								type = "header",
+								name = "",
+							},
+							af = {
+								order = 3,
 								type = 'color',
 								hasAlpha = true,
 								name = L['Azerite Bar'],
@@ -202,8 +211,13 @@ local function ConfigTable()
 								get = function(info) return E.db.NutsAndBolts.DataBarColors.reputation.color.default end,
 								set = function(info, value) E.db.NutsAndBolts.DataBarColors.reputation.color.default = value; mod:ChangeRepColor(); end,
 							},
-							friendly = {
+							spacer = {
 								order = 2,
+								type = "header",
+								name = "",
+							},
+							friendly = {
+								order = 3,
 								type = 'color',
 								hasAlpha = true,
 								name = FACTION_STANDING_LABEL5.."+",
@@ -221,7 +235,7 @@ local function ConfigTable()
 								end,
 							},
 							neutral = {
-								order = 3,
+								order = 4,
 								type = 'color',
 								hasAlpha = true,
 								name = FACTION_STANDING_LABEL4,
@@ -239,7 +253,7 @@ local function ConfigTable()
 								end,
 							},
 							unfriendly = {
-								order = 4,
+								order = 5,
 								type = 'color',
 								hasAlpha = true,
 								name = FACTION_STANDING_LABEL3,
@@ -257,7 +271,7 @@ local function ConfigTable()
 								end,
 							},
 							hated = {
-								order = 5,
+								order = 6,
 								type = 'color',
 								hasAlpha = true,
 								name = FACTION_STANDING_LABEL2.."/"..FACTION_STANDING_LABEL1,
@@ -304,8 +318,13 @@ local function ConfigTable()
 								get = function(info) return E.db.NutsAndBolts.DataBarColors.honor.color.default end,
 								set = function(info, value) E.db.NutsAndBolts.DataBarColors.honor.color.default = value; mod:ChangeHonorColor(); end,
 							},
-							hn = {
+							spacer = {
 								order = 2,
+								type = "header",
+								name = "",
+							},
+							hn = {
+								order = 3,
 								type = 'color',
 								hasAlpha = true,
 								name = HONOR,
