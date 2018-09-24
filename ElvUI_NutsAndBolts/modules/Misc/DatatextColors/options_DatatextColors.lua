@@ -17,10 +17,9 @@ local function ConfigTable()
 	end
 
 	E.Options.args.NutsAndBolts.args.misc.args.DataTextColors = {
-		order = 30,
+		order = 10,
 		type = 'group',
 		name = L['DataText Color'],
-		--guiInline = true,
 		childGroups = 'tab',
 		args = {
 			name = {

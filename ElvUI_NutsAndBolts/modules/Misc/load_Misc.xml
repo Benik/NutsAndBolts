@@ -1,0 +1,4 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">	
+	<Include file="BagsCountPosition\load_BagsCountPosition.xml"/>
+	<Include file="DatatextColors\load_DatatextColors.xml"/>
+</Ui>

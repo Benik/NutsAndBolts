@@ -1,6 +1,6 @@
 ﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">	
 	<Include file="LocationLite\load_LocationLite.xml"/>
 	<Include file="ElvUIPanels\load_ElvUIPanels.xml"/>
-	<Include file="DatatextColors\load_DatatextColors.xml"/>
 	<Include file="DatabarColors\load_DatabarColors.xml"/>
+	<Include file="Misc\load_Misc.xml"/>
 </Ui>

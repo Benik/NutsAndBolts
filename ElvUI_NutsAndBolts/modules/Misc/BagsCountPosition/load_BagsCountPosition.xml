@@ -1,0 +1,4 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<script file="BagsCountPosition.lua"/>
+	<script file="options_BagsCountPosition.lua"/>
+</Ui>
