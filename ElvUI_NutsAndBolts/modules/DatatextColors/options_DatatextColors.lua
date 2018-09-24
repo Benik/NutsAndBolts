@@ -16,10 +16,11 @@ local function ConfigTable()
 		description = L["It looks like ElvUI_DatatextColors addon is loaded. It is strongly suggested to disable it, by clicking the button below.\n|cff00c0faNOTE:|r The standalone ElvUI_DatatextColors addon is not gonna be available anymore on Tukui.org."]
 	end
 
-	E.Options.args.NutsAndBolts.args.DataTextColors = {
+	E.Options.args.NutsAndBolts.args.misc.args.DataTextColors = {
 		order = 30,
 		type = 'group',
 		name = L['DataText Color'],
+		--guiInline = true,
 		childGroups = 'tab',
 		args = {
 			name = {
@@ -54,7 +55,7 @@ local function ConfigTable()
 			dtcolor = {
 				order = 6,
 				type = 'group',
-				name = L['DataText Color'],
+				name = OPTIONS,
 				disabled = function() return not E.db.NutsAndBolts.DataTextColors.enable or not mod.initialized end,
 				args = {
 					customColor = {
@@ -105,7 +106,7 @@ local function ConfigTable()
 		type = "execute",
 		width = "double",
 		name = L["Change Datatext text Color"],
-		func = function() LibStub("AceConfigDialog-3.0-ElvUI"):SelectGroup("ElvUI", "NutsAndBolts", "DataTextColors") end,
+		func = function() LibStub("AceConfigDialog-3.0-ElvUI"):SelectGroup("ElvUI", "NutsAndBolts", "misc", "DataTextColors") end,
 	}
 end
 ENB.Config["DataTextColors"] = ConfigTable

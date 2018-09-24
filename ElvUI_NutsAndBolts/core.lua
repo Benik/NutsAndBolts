@@ -32,7 +32,7 @@ ENB.DT = ENB:IsAddOnEnabled('ElvUI_DTColors')
 -- Options
 function ENB:ConfigTable()
 	E.Options.args.NutsAndBolts = {
-		order = 100,
+		order = 400,
 		type = "group",
 		name = ENB.Title,
 		args = {
@@ -76,6 +76,13 @@ function ENB:ConfigTable()
 				name = L["Report Bugs or Request more Nuts & Bolts"],
 				get = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
 				set = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
+			},
+			misc = {
+				order = 100,
+				type = "group",
+				name = MISCELLANEOUS,
+				childGroups = 'tab',
+				args = {},
 			},
 		},
 	}
