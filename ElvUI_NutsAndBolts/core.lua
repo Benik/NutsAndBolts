@@ -4,7 +4,7 @@ local ENB = E:NewModule("NutsAndBolts", "AceHook-3.0", "AceEvent-3.0", "AceTimer
 local addon, ns = ...
  
 ENB.Version = GetAddOnMetadata("ElvUI_NutsAndBolts", "Version")
-ENB.Title = format('|cff00c0fa%s|r', "ElvUI Nuts & Bolts")
+ENB.Title = format('|cff00c0fa%s|r|cffffff00%s|r|cff00c0fa%s|r', "Nuts", "&", "Bolts")
 ENB.Config = {}
 
 P["NutsAndBolts"] = {}
