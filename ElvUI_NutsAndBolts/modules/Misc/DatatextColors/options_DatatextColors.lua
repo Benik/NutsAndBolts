@@ -25,6 +25,7 @@ local function ConfigTable()
 			name = {
 				order = 1,
 				type = 'description',
+				fontSize = 'medium',
 				name = L["This module can alter all ElvUI DataText text color"],
 			},
 			spacer1 = {
@@ -39,20 +40,15 @@ local function ConfigTable()
 				get = function(info) return E.db.NutsAndBolts["DataTextColors"][ info[#info] ] end,
 				set = function(info, value) E.db.NutsAndBolts["DataTextColors"][ info[#info] ] = value; E:StaticPopup_Show('PRIVATE_RL'); end,
 			},
-			spacer2 = {
-				order = 4,
-				type = "description",
-				name = description.."\n",
-			},
 			toggleButton = {
-				order = 5,
+				order = 4,
 				type = "execute",
 				name = DISABLE.." ".."ElvUI_DTColors\n",
 				hidden = function() return not ENB.DT end,
 				func = function() StaticPopup_Show("ElvUI_DTColors") end,
 			},
 			dtcolor = {
-				order = 6,
+				order = 5,
 				type = 'group',
 				name = OPTIONS,
 				disabled = function() return not E.db.NutsAndBolts.DataTextColors.enable or not mod.initialized end,

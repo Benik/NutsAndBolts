@@ -41,48 +41,69 @@ function ENB:ConfigTable()
 				type = "header",
 				name = format(L["%s version %s by Benik"], ENB.Title, ENB:cOption(ENB.Version)),
 			},		
-			description1 = {
+			logo = {
 				order = 2,
 				type = "description",
+				name = "",
+				image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\nutsandbolts_logo.tga', 512, 128 end,
+			},
+			header2 = {
+				order = 3,
+				type = "header",
 				name = format(L["%s is a collection of my plugins in Tukui.org / Twitch"], ENB.Title),
 			},
 			spacer1 = {
-				order = 3,
+				order = 4,
 				type = "description",
 				name = "\n",
 			},
-			header2 = {
-				order = 4,
-				type = "header",
-				name = L["Information / Help"],
-			},
-			description2 = {
+			info = {
 				order = 5,
-				type = "description",
-				name = L["Please use the following links if you need help or wish to know more about this AddOn."],
-			},
-			addonpage = {
-				order = 6,
-				type = "input",
-				width = "full",
-				name = L["AddOn Description"],
-				get = function() return "https://www.tukui.org/addons.php?id=11" end, -- change the id
-				set = function() return "https://www.tukui.org/addons.php?id=11" end,
-			},
-			tickets = {
-				order = 7,
-				type = "input",
-				width = "full",
-				name = L["Report Bugs or Request more Nuts & Bolts"],
-				get = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
-				set = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
+				type = "group",
+				name = L["Information / Help"],
+				guiInline = true,
+				args = {
+					description2 = {
+						order = 1,
+						type = "description",
+						name = L["Please use the following links if you need help or wish to know more about this AddOn."].."\n",
+					},
+					addonpage = {
+						order = 2,
+						type = "input",
+						width = "full",
+						name = L["AddOn Description"],
+						get = function() return "https://www.tukui.org/addons.php?id=11" end, -- change the id
+						set = function() return "https://www.tukui.org/addons.php?id=11" end,
+					},
+					tickets = {
+						order = 3,
+						type = "input",
+						width = "full",
+						name = L["Report Bugs or Request more Nuts & Bolts"],
+						get = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
+						set = function() return "https://git.tukui.org/Benik/ElvUI_NutsAndBolts/issues" end,
+					},
+				},
 			},
 			misc = {
 				order = 100,
 				type = "group",
 				name = MISCELLANEOUS,
 				childGroups = 'tab',
-				args = {},
+				args = {
+					header1 = {
+						order = 1,
+						type = "header",
+						name = MISCELLANEOUS,
+					},
+					logo = {
+						order = 2,
+						type = "description",
+						name = "",
+						image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\misc.tga', 512, 128 end,
+					},
+				},
 			},
 		},
 	}

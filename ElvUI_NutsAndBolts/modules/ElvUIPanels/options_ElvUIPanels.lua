@@ -26,30 +26,41 @@ local function ConfigTable()
 		name = L['ElvUI Panels'],
 		childGroups = 'tab',
 		args = {
-			name = {
+			header1 = {
 				order = 1,
-				type = 'description',
-				name = L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"],
+				type = 'header',
+				name = L['ElvUI Panels'],
 			},
-			spacer1 = {
+			logo = {
 				order = 2,
 				type = "description",
-				name = "\n",
+				name = "",
+				image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\elvuipanels.tga', 512, 128 end,
 			},
-			enable = {
+			header2 = {
 				order = 3,
+				type = "header",
+				name = L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"],
+			},
+			--spacer1 = {
+				--order = 4,
+				--type = "description",
+				--name = "\n",
+			--},
+			enable = {
+				order = 5,
 				type = 'toggle',
 				name = ENABLE,
 				get = function(info) return E.db.NutsAndBolts["ElvUIPanels"][ info[#info] ] end,
 				set = function(info, value) E.db.NutsAndBolts["ElvUIPanels"][ info[#info] ] = value; E:StaticPopup_Show('PRIVATE_RL'); end,
 			},
 			spacer2 = {
-				order = 4,
+				order = 6,
 				type = "description",
 				name = "\n",
 			},
 			panels = {
-				order = 5,
+				order = 7,
 				type = 'group',
 				name = L['Panels'],
 				disabled = function() return not E.db.NutsAndBolts.ElvUIPanels.enable or not mod.initialized end,

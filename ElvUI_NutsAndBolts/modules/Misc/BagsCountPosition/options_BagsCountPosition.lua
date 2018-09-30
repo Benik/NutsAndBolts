@@ -31,6 +31,7 @@ local function ConfigTable()
 			name = {
 				order = 1,
 				type = 'description',
+				fontSize = 'medium',
 				name = L["This module can move the Bag Item Count Position"],
 			},
 			spacer1 = {
@@ -45,13 +46,8 @@ local function ConfigTable()
 				get = function(info) return E.db.NutsAndBolts["BagsCountPosition"][ info[#info] ] end,
 				set = function(info, value) E.db.NutsAndBolts["BagsCountPosition"][ info[#info] ] = value; E:StaticPopup_Show('PRIVATE_RL'); end,
 			},
-			spacer2 = {
-				order = 4,
-				type = "description",
-				name = "\n",
-			},
 			bag = {
-				order = 5,
+				order = 4,
 				type = 'group',
 				name = OPTIONS,
 				disabled = function() return not E.db.NutsAndBolts.BagsCountPosition.enable or not mod.initialized end,

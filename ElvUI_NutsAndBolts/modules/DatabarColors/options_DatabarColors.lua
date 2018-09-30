@@ -46,30 +46,41 @@ local function ConfigTable()
 		name = L['DataBar Colors'],
 		childGroups = 'tab',
 		args = {
-			name = {
+			header1 = {
 				order = 1,
-				type = 'description',
-				name = L["This module can alter ElvUI Databar statusbars to any color"],
+				type = 'header',
+				name = L['DataBar Colors'],
 			},
-			spacer1 = {
+			logo = {
 				order = 2,
 				type = "description",
-				name = "\n",
+				name = "",
+				image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\databarcolors.tga', 512, 128 end,
 			},
-			enable = {
+			header2 = {
 				order = 3,
+				type = "header",
+				name = L["This module can alter ElvUI Databar statusbars to any color"],
+			},
+			--spacer1 = {
+				--order = 4,
+				--type = "description",
+				--name = "\n",
+			--},
+			enable = {
+				order = 5,
 				type = 'toggle',
 				name = ENABLE,
 				get = function(info) return E.db.NutsAndBolts["DataBarColors"][ info[#info] ] end,
 				set = function(info, value) E.db.NutsAndBolts["DataBarColors"][ info[#info] ] = value; E:StaticPopup_Show('PRIVATE_RL'); end,
 			},
 			spacer2 = {
-				order = 4,
+				order = 6,
 				type = "description",
 				name = "\n",
 			},
 			experience = {
-				order = 1,
+				order = 7,
 				type = 'group',
 				name = L['XP Bar'],
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,
@@ -139,7 +150,7 @@ local function ConfigTable()
 				},
 			},
 			azerite = {
-				order = 2,
+				order = 8,
 				type = 'group',
 				name = L['Azerite Bar'],
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,
@@ -192,7 +203,7 @@ local function ConfigTable()
 				},
 			},
 			reputation = {
-				order = 3,
+				order = 9,
 				type = 'group',
 				name = REPUTATION,
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,
@@ -299,7 +310,7 @@ local function ConfigTable()
 				},
 			},
 			honor = {
-				order = 4,
+				order = 10,
 				type = 'group',
 				name = HONOR,
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,
