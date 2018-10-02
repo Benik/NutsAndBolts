@@ -73,8 +73,8 @@ function ENB:ConfigTable()
 						type = "input",
 						width = "full",
 						name = L["AddOn Description"],
-						get = function() return "https://www.tukui.org/addons.php?id=11" end, -- change the id
-						set = function() return "https://www.tukui.org/addons.php?id=11" end,
+						get = function() return "https://www.tukui.org/addons.php?id=9" end,
+						set = function() return "https://www.tukui.org/addons.php?id=9" end,
 					},
 					tickets = {
 						order = 3,
