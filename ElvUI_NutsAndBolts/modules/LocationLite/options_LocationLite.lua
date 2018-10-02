@@ -73,7 +73,7 @@ local function ConfigTable()
 			header1 = {
 				order = 1,
 				type = "header",
-				name = L["Location Lite"],
+				name = "",
 			},
 			logo = {
 				order = 2,
@@ -86,11 +86,6 @@ local function ConfigTable()
 				type = "header",
 				name = L["LocationLite adds a movable player location panel"],
 			},
-			--spacer1 = {
-				--order = 4,
-				--type = "description",
-				--name = "\n",
-			--},
 			enable = {
 				order = 5,
 				name = ENABLE,

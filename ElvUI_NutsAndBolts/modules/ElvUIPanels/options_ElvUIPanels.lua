@@ -29,7 +29,7 @@ local function ConfigTable()
 			header1 = {
 				order = 1,
 				type = 'header',
-				name = L['ElvUI Panels'],
+				name = "",
 			},
 			logo = {
 				order = 2,
@@ -42,11 +42,6 @@ local function ConfigTable()
 				type = "header",
 				name = L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"],
 			},
-			--spacer1 = {
-				--order = 4,
-				--type = "description",
-				--name = "\n",
-			--},
 			enable = {
 				order = 5,
 				type = 'toggle',

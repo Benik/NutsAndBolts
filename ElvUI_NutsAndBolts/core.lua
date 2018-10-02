@@ -95,13 +95,18 @@ function ENB:ConfigTable()
 					header1 = {
 						order = 1,
 						type = "header",
-						name = MISCELLANEOUS,
+						name = "",
 					},
 					logo = {
 						order = 2,
 						type = "description",
 						name = "",
 						image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\misc.tga', 512, 128 end,
+					},
+					header2 = {
+						order = 3,
+						type = "header",
+						name = "",
 					},
 				},
 			},

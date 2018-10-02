@@ -49,7 +49,7 @@ local function ConfigTable()
 			header1 = {
 				order = 1,
 				type = 'header',
-				name = L['DataBar Colors'],
+				name = "",
 			},
 			logo = {
 				order = 2,
@@ -62,11 +62,6 @@ local function ConfigTable()
 				type = "header",
 				name = L["This module can alter ElvUI Databar statusbars to any color"],
 			},
-			--spacer1 = {
-				--order = 4,
-				--type = "description",
-				--name = "\n",
-			--},
 			enable = {
 				order = 5,
 				type = 'toggle',
