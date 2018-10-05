@@ -54,87 +54,105 @@ local function ConfigTable()
 				type = "description",
 				name = "\n",
 			},
-			panels = {
+			top = {
 				order = 7,
 				type = 'group',
-				name = L['Panels'],
+				name = L['Top Panel'],
+				get = function(info) return E.db.NutsAndBolts.ElvUIPanels.top[ info[#info] ] end,
+				set = function(info, value) E.db.NutsAndBolts.ElvUIPanels.top[ info[#info] ] = value; mod:TopPanelLayout() end,
 				disabled = function() return not E.db.NutsAndBolts.ElvUIPanels.enable or not mod.initialized end,
 				args = {
-					top = {
-						order = 5,
-						type = 'group',
-						guiInline = true,
-						name = L['Top Panel'],
-						get = function(info) return E.db.NutsAndBolts.ElvUIPanels.top[ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts.ElvUIPanels.top[ info[#info] ] = value; mod:TopPanelLayout() end,
-						args = {
-							transparency = {
-								order = 1,
-								type = 'toggle',
-								name = L['Panel Transparency'],
-							},
-							shadows = {
-								order = 2,
-								type = 'toggle',
-								name = L['Shadows'],
-							},
-							style = {
-								order = 3,
-								type = 'toggle',
-								name = L['BenikUI Style'],
-								hidden = function() return not ENB.BU end,
-								disabled = function() return (ENB.BU and not E.db.benikui.general.benikuiStyle) end,
-							},
-							spacer = {
-								order = 4,
-								type = "header",
-								name = "",
-							},
-							height = {
-								order = 5,
-								type = "range",
-								name = L["Height"],
-								min = 6, max = 600, step = 1,
-							},
-						},
+					show = {
+						order = 1,
+						type = 'toggle',
+						name = SHOW,
+						desc = L["Display a panel across the top of the screen. This is for cosmetic only."],
+						get = function(info) return E.db.general.topPanel end,
+						set = function(info, value) E.db.general.topPanel = value; E:GetModule('Layout'):TopPanelVisibility() end
 					},
-					bottom = {
+					spacer = {
+						order = 2,
+						type = "header",
+						name = "",
+					},
+					transparency = {
+						order = 3,
+						type = 'toggle',
+						name = L['Panel Transparency'],
+					},
+					shadows = {
+						order = 4,
+						type = 'toggle',
+						name = L['Shadows'],
+					},
+					style = {
+						order = 5,
+						type = 'toggle',
+						name = L['BenikUI Style'],
+						hidden = function() return not ENB.BU end,
+						disabled = function() return (ENB.BU and not E.db.benikui.general.benikuiStyle) end,
+					},
+					spacer2 = {
 						order = 6,
-						type = 'group',
-						guiInline = true,
-						name = L['Bottom Panel'],
-						get = function(info) return E.db.NutsAndBolts.ElvUIPanels.bottom[ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts.ElvUIPanels.bottom[ info[#info] ] = value; mod:BottomPanelLayout() end,
-						args = {
-							transparency = {
-								order = 1,
-								type = 'toggle',
-								name = L['Panel Transparency'],
-							},
-							shadows = {
-								order = 2,
-								type = 'toggle',
-								name = L['Shadows'],
-							},
-							style = {
-								order = 3,
-								type = 'toggle',
-								name = L['BenikUI Style'],
-								hidden = function() return not ENB.BU end,
-								disabled = function() return (ENB.BU and not E.db.benikui.general.benikuiStyle) end,
-							},
-							spacer = {
-								order = 4,
-								type = "header",
-								name = "",
-							},
-							height = {
-								order = 5,
-								type = "range",
-								name = L["Height"],
-								min = 6, max = 600, step = 1,
-							},
-						},
+						type = "header",
+						name = "",
+					},
+					height = {
+						order = 7,
+						type = "range",
+						name = L["Height"],
+						min = 6, max = 600, step = 1,
+					},
+				},
+			},
+			bottom = {
+				order = 8,
+				type = 'group',
+				name = L['Bottom Panel'],
+				get = function(info) return E.db.NutsAndBolts.ElvUIPanels.bottom[ info[#info] ] end,
+				set = function(info, value) E.db.NutsAndBolts.ElvUIPanels.bottom[ info[#info] ] = value; mod:BottomPanelLayout() end,
+				disabled = function() return not E.db.NutsAndBolts.ElvUIPanels.enable or not mod.initialized end,
+				args = {
+					show = {
+						order = 1,
+						type = 'toggle',
+						name = SHOW,
+						desc = L["Display a panel across the bottom of the screen. This is for cosmetic only."],
+						get = function(info) return E.db.general.bottomPanel end,
+						set = function(info, value) E.db.general.bottomPanel = value; E:GetModule('Layout'):BottomPanelVisibility() end
+					},
+					spacer = {
+						order = 2,
+						type = "header",
+						name = "",
+					},
+					transparency = {
+						order = 3,
+						type = 'toggle',
+						name = L['Panel Transparency'],
+					},
+					shadows = {
+						order = 4,
+						type = 'toggle',
+						name = L['Shadows'],
+					},
+					style = {
+						order = 5,
+						type = 'toggle',
+						name = L['BenikUI Style'],
+						hidden = function() return not ENB.BU end,
+						disabled = function() return (ENB.BU and not E.db.benikui.general.benikuiStyle) end,
+					},
+					spacer2 = {
+						order = 6,
+						type = "header",
+						name = "",
+					},
+					height = {
+						order = 7,
+						type = "range",
+						name = L["Height"],
+						min = 6, max = 600, step = 1,
 					},
 				},
 			},
