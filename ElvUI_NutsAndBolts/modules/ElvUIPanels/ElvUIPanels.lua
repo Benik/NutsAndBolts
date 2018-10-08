@@ -79,7 +79,7 @@ function mod:ShadowAndStylePanels()
 	Panel_OnShow(bottom)	
 
 	if not ENB.BU then return end
-	top:Style('Inside')
+	top:Style('Under')
 	if top.style then
 		top.style:SetScript('OnShow', Style_OnShow)
 		top.style:SetFrameLevel(1)
