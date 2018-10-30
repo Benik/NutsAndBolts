@@ -5,7 +5,7 @@ local mod = E:GetModule('NB_BagsCountPosition');
 
 -- Defaults
 P["NutsAndBolts"]["BagsCountPosition"] = {
-	['enable'] = false,
+	['enable'] = true,
 	['countPosition'] = 'BOTTOMRIGHT',
 }
 

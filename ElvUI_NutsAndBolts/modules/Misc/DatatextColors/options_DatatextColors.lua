@@ -4,7 +4,7 @@ local mod = E:GetModule('NB_DataTextColors');
 
 -- Defaults
 P["NutsAndBolts"]["DataTextColors"] = {
-	['enable'] = false,
+	['enable'] = true,
 	['userColor'] = { r = 1, g = 1, b = 1 },
 	['customColor'] = 1,
 }

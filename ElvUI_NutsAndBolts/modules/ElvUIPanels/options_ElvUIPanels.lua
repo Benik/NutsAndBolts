@@ -4,7 +4,7 @@ local mod = E:GetModule('NB_ElvUIPanels');
 
 -- Defaults
 P["NutsAndBolts"]["ElvUIPanels"] = {
-	['enable'] = false,
+	['enable'] = true,
 	['top'] = {
 		['style'] = false,
 		['transparency'] = true,
