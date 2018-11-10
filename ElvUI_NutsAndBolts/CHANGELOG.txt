@@ -1,2 +1,8 @@
+1.10
+*New module: Objective Frame hider
+*Enable some modules by default
+*Top Panel will use the new 'Under' style. It will show better with BenikUI dev version
+*Toggle Top and Bottom Panels via N&B options
+
 1.00
 Initial release
