@@ -5,8 +5,11 @@ local mod = E:NewModule('NB_ObjectiveTracker', 'AceEvent-3.0');
 local GetInstanceInfo = GetInstanceInfo
 local IsInInstance = IsInInstance
 local GetNumTrackedAchievements = GetNumTrackedAchievements
+local UnitOnTaxi = UnitOnTaxi
 
 function mod:UpdateLocation()
+	if (UnitOnTaxi("player")) then return end
+
 	local db = E.db.NutsAndBolts.ObjectiveTracker
 	local _, _, difficulty = GetInstanceInfo();
 
