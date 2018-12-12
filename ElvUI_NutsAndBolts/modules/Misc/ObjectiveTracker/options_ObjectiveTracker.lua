@@ -4,7 +4,7 @@ local mod = E:GetModule('NB_ObjectiveTracker');
 
 -- Defaults
 P["NutsAndBolts"]["ObjectiveTracker"] = {
-	['enable'] = true,
+	['enable'] = false,
 	['allInstances'] = true,
 	['mythic'] = true,
 	['achievement'] = true,
