@@ -1,3 +1,8 @@
+1.11
+*toc update for patch 8.1
+*Disable Objective Tracker by default
+*Prevent the Objective Tracker from being hidden/shown while taxi flying
+
 1.10
 *New module: Objective Frame hider
 *Enable some modules by default
