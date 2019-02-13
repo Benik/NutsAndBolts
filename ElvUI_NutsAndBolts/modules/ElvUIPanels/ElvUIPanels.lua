@@ -70,11 +70,11 @@ function mod:ShadowAndStylePanels()
 	local top = _G['ElvUI_TopPanel']
 	local bottom = _G['ElvUI_BottomPanel']
 
-	top:CreateShadow('Default')
+	top:CreateShadow()
 	top:SetScript('OnShow', Panel_OnShow)
 	Panel_OnShow(top)
 
-	bottom:CreateShadow('Default')
+	bottom:CreateShadow()
 	bottom:SetScript('OnShow', Panel_OnShow)
 	Panel_OnShow(bottom)	
 

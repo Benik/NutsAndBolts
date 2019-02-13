@@ -404,7 +404,7 @@ end
 function mod:StyleAndShadows()
 	for _, frame in pairs(panels) do
 		if frame then
-			frame:CreateShadow('Default')
+			frame:CreateShadow()
 		end
 	end
 
