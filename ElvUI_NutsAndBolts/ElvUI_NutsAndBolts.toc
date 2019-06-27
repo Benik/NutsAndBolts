@@ -1,6 +1,6 @@
-## Interface: 80100
+## Interface: 80200
 ## Author: Benik
-## Version: 1.14
+## Version: 1.15
 ## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
