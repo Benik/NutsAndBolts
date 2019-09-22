@@ -1,6 +1,4 @@
-﻿local AceLocale = LibStub:GetLibrary("AceLocale-3.0")
-local L = AceLocale:NewLocale("ElvUI", "zhTW")
-if not L then return end
+﻿local L = ElvUI[1].Libs.ACL:NewLocale("ElvUI", "zhTW")
 
 L["%s version %s by Benik"] = true
 L["%s is a collection of my plugins in Tukui.org / Twitch"] = true
