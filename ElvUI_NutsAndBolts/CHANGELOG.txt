@@ -1,3 +1,6 @@
+1.18 (Jan 15, 2020)
+Fix LocationLite right click error. (#7)
+
 1.17 (Jan 15, 2020)
 Bump toc for patch 8.3
 
