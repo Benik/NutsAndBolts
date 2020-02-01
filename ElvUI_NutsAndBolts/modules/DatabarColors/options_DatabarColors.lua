@@ -48,34 +48,29 @@ local function ConfigTable()
 		args = {
 			header1 = {
 				order = 1,
-				type = 'header',
-				name = "",
-			},
-			logo = {
-				order = 2,
-				type = "description",
-				name = "",
-				image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\databarcolors.tga', 512, 128 end,
+				type = 'description',
+				fontSize = 'medium',
+				name = "\n"..L["This module can alter ElvUI Databar statusbars to any color"],
 			},
 			header2 = {
-				order = 3,
+				order = 2,
 				type = "header",
-				name = L["This module can alter ElvUI Databar statusbars to any color"],
+				name = "",
 			},
 			enable = {
-				order = 5,
+				order = 3,
 				type = 'toggle',
 				name = ENABLE,
 				get = function(info) return E.db.NutsAndBolts["DataBarColors"][ info[#info] ] end,
 				set = function(info, value) E.db.NutsAndBolts["DataBarColors"][ info[#info] ] = value; E:StaticPopup_Show('PRIVATE_RL'); end,
 			},
-			spacer2 = {
-				order = 6,
+			spacer1 = {
+				order = 4,
 				type = "description",
 				name = "\n",
 			},
 			experience = {
-				order = 7,
+				order = 5,
 				type = 'group',
 				name = L['XP Bar'],
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,
@@ -145,7 +140,7 @@ local function ConfigTable()
 				},
 			},
 			azerite = {
-				order = 8,
+				order = 6,
 				type = 'group',
 				name = L['Azerite Bar'],
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,
@@ -198,7 +193,7 @@ local function ConfigTable()
 				},
 			},
 			reputation = {
-				order = 9,
+				order = 7,
 				type = 'group',
 				name = REPUTATION,
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,
@@ -305,7 +300,7 @@ local function ConfigTable()
 				},
 			},
 			honor = {
-				order = 10,
+				order = 8,
 				type = 'group',
 				name = HONOR,
 				disabled = function() return not E.db.NutsAndBolts.DataBarColors.enable or not mod.initialized end,

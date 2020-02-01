@@ -72,41 +72,36 @@ local function ConfigTable()
 		args = {
 			header1 = {
 				order = 1,
-				type = "header",
-				name = "",
-			},
-			logo = {
-				order = 2,
 				type = "description",
-				name = "",
-				image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\locationlite.tga', 512, 128 end,
+				fontSize = 'medium',
+				name = "\n"..L["LocationLite adds a movable player location panel"],
 			},
 			header2 = {
-				order = 3,
+				order = 2,
 				type = "header",
-				name = L["LocationLite adds a movable player location panel"],
+				name = "",
 			},
 			enable = {
-				order = 5,
+				order = 3,
 				name = ENABLE,
 				type = 'toggle',
 				get = function(info) return E.db.NutsAndBolts["LocationLite"][ info[#info] ] end,
 				set = function(info, value) E.db.NutsAndBolts["LocationLite"][ info[#info] ] = value; E:StaticPopup_Show('PRIVATE_RL'); end,					
 			},
 			spacer2 = {
-				order = 6,
+				order = 4,
 				type = "description",
 				name = description.."\n",
 			},
 			toggleButton = {
-				order = 7,
+				order = 5,
 				type = "execute",
 				name = DISABLE.." "..addonstring.."\n",
 				hidden = function() return not (ENB.LP or ENB.LL and true or false) end,
 				func = function() StaticPopup_Show("PlusLite", addonstring) end,
 			},
 			general = {
-				order = 8,
+				order = 6,
 				type = "group",
 				name = L["General"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
@@ -155,7 +150,7 @@ local function ConfigTable()
 				},
 			},
 			layout = {
-				order = 9,
+				order = 7,
 				type = "group",
 				name = L["Layout"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
@@ -257,7 +252,7 @@ local function ConfigTable()
 				},
 			},
 			locationPanel = {
-				order = 10,
+				order = 8,
 				type = "group",
 				name = L["Location Panel"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,
@@ -339,7 +334,7 @@ local function ConfigTable()
 				},
 			},
 			coords = {
-				order = 11,
+				order = 9,
 				type = "group",
 				name = L["Coordinates"],
 				disabled = function() return not E.db.NutsAndBolts.LocationLite.enable or not mod.initialized end,

@@ -28,34 +28,29 @@ local function ConfigTable()
 		args = {
 			header1 = {
 				order = 1,
-				type = 'header',
-				name = "",
-			},
-			logo = {
-				order = 2,
-				type = "description",
-				name = "",
-				image = function() return 'Interface\\AddOns\\ElvUI_NutsAndBolts\\media\\textures\\elvuipanels.tga', 512, 128 end,
+				type = 'description',
+				fontSize = 'medium',
+				name = "\n"..L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"],
 			},
 			header2 = {
 				order = 3,
 				type = "header",
-				name = L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"],
+				name = "",
 			},
 			enable = {
-				order = 5,
+				order = 3,
 				type = 'toggle',
 				name = ENABLE,
 				get = function(info) return E.db.NutsAndBolts["ElvUIPanels"][ info[#info] ] end,
 				set = function(info, value) E.db.NutsAndBolts["ElvUIPanels"][ info[#info] ] = value; E:StaticPopup_Show('PRIVATE_RL'); end,
 			},
 			spacer2 = {
-				order = 6,
+				order = 4,
 				type = "description",
 				name = "\n",
 			},
 			top = {
-				order = 7,
+				order = 5,
 				type = 'group',
 				name = L['Top Panel'],
 				get = function(info) return E.db.NutsAndBolts.ElvUIPanels.top[ info[#info] ] end,
@@ -106,7 +101,7 @@ local function ConfigTable()
 				},
 			},
 			bottom = {
-				order = 8,
+				order = 6,
 				type = 'group',
 				name = L['Bottom Panel'],
 				get = function(info) return E.db.NutsAndBolts.ElvUIPanels.bottom[ info[#info] ] end,
