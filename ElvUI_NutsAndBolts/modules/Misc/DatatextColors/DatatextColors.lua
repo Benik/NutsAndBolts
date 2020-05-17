@@ -31,6 +31,7 @@ end
 function mod:Initialize()
 	self:RegisterEvent('PLAYER_ENTERING_WORLD')
 	self.initialized = true
+	hooksecurefunc(DT, 'LoadDataTexts', mod.ColorFont)
 end
 
 local function InitializeCallback()
