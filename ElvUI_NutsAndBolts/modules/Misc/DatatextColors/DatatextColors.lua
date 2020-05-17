@@ -9,13 +9,14 @@ function mod:ColorFont()
 	local db = E.db.NutsAndBolts.DataTextColors
 	for panelName, panel in pairs(DT.RegisteredPanels) do
 		for i = 1, panel.numPoints do
-			local pointIndex = DT.PointLocation[i]
-			if db.customColor == 1 then
-				panel.dataPanels[pointIndex].text:SetTextColor(classColor.r, classColor.g, classColor.b)
-			elseif db.customColor == 2 then
-				panel.dataPanels[pointIndex].text:SetTextColor(ENB:unpackColor(db.userColor))
-			else
-				panel.dataPanels[pointIndex].text:SetTextColor(ENB:unpackColor(E.db.general.valuecolor))
+			if panel.dataPanels[i] then
+				if db.customColor == 1 then
+					panel.dataPanels[i].text:SetTextColor(classColor.r, classColor.g, classColor.b)
+				elseif db.customColor == 2 then
+					panel.dataPanels[i].text:SetTextColor(ENB:unpackColor(db.userColor))
+				else
+					panel.dataPanels[i].text:SetTextColor(ENB:unpackColor(E.db.general.valuecolor))
+				end
 			end
 		end
 	end
