@@ -19,6 +19,7 @@ function mod:ColorFont()
 				end
 			end
 		end
+		DT:UpdatePanelInfo(panelName, panel)
 	end
 end
 
