@@ -21,7 +21,7 @@ local UNKNOWN = UNKNOWN
 -- GLOBALS: NB_LocationLitePanel, NB_XCoords, NB_YCoords
 
 local COORDS_WIDTH = 30 -- Coord panels width
-local classColor = E.myclass == 'PRIEST' and E.PriestColors or (CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[E.myclass] or RAID_CLASS_COLORS[E.myclass])
+local classColor = E:ClassColor(E.myclass, true)
 
 -- Hide in combat, after fade function ends
 local function PanelOnFade()

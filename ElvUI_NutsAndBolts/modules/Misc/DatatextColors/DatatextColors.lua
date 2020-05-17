@@ -3,7 +3,7 @@ local ENB = E:GetModule("NutsAndBolts");
 local DT = E:GetModule('DataTexts');
 local mod = E:NewModule('NB_DataTextColors', 'AceEvent-3.0');
 
-local classColor = E.myclass == 'PRIEST' and E.PriestColors or (CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[E.myclass] or RAID_CLASS_COLORS[E.myclass])
+local classColor = E:ClassColor(E.myclass, true)
 
 function mod:ColorFont()
 	local db = E.db.NutsAndBolts.DataTextColors
