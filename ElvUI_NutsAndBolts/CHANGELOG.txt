@@ -1,3 +1,8 @@
+1.20 (Jul 9, 2020)
+*Fixed DataText Colors module
+*Fixed DataText color not applying after a reload
+*Update Class Colors
+
 1.19 (Feb 6, 2020)
 Fixed the options to follow the latest ElvUI changes
 
