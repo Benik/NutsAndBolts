@@ -105,7 +105,7 @@ end
 local function CreateMainPanel()
 	local db = E.db.NutsAndBolts.LocationLite
 
-	local loc_panel = CreateFrame('Frame', 'NB_LocationLitePanel', E.UIParent)
+	local loc_panel = CreateFrame('Frame', 'NB_LocationLitePanel', E.UIParent, 'BackdropTemplate')
 	loc_panel:Width(db.width or 200)
 	loc_panel:Height(db.height or 21)
 	loc_panel:Point('TOP', E.UIParent, 'TOP', 0, -E.mult -22)
@@ -150,7 +150,7 @@ local function CreateCoordPanels()
 	local db = E.db.NutsAndBolts.LocationLite
 
 	-- X Coord panel
-	local coordsX = CreateFrame('Frame', "NB_XCoords", NB_LocationLitePanel)
+	local coordsX = CreateFrame('Frame', "NB_XCoords", NB_LocationLitePanel, 'BackdropTemplate')
 	coordsX:Width(COORDS_WIDTH)
 	coordsX:Height(db.height or 21)
 	coordsX.Text = coordsX:CreateFontString(nil, "LOW")
@@ -160,7 +160,7 @@ local function CreateCoordPanels()
 	tinsert(panels, NB_XCoords)
 
 	-- Y Coord panel
-	local coordsY = CreateFrame('Frame', "NB_YCoords", NB_LocationLitePanel)
+	local coordsY = CreateFrame('Frame', "NB_YCoords", NB_LocationLitePanel, 'BackdropTemplate')
 	coordsY:Width(COORDS_WIDTH)
 	coordsY:Height(db.height or 21)
 	coordsY.Text = coordsY:CreateFontString(nil, "LOW")
