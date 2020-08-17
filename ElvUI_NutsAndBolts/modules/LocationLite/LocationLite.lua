@@ -106,9 +106,9 @@ local function CreateMainPanel()
 	local db = E.db.NutsAndBolts.LocationLite
 
 	local loc_panel = CreateFrame('Frame', 'NB_LocationLitePanel', E.UIParent)
-	loc_panel:Width(db.width or 200)
-	loc_panel:Height(db.height or 21)
-	loc_panel:Point('TOP', E.UIParent, 'TOP', 0, -E.mult -22)
+	loc_panel:SetWidth(db.width or 200)
+	loc_panel:SetHeight(db.height or 21)
+	loc_panel:SetPoint('TOP', E.UIParent, 'TOP', 0, -E.mult -22)
 	loc_panel:SetFrameStrata('LOW')
 	loc_panel:SetFrameLevel(2)
 	loc_panel:EnableMouse(true)
@@ -117,7 +117,7 @@ local function CreateMainPanel()
 
 	-- Location Text
 	loc_panel.Text = loc_panel:CreateFontString(nil, "LOW")
-	loc_panel.Text:Point("CENTER", 0, 0)
+	loc_panel.Text:SetPoint("CENTER", 0, 0)
 	loc_panel.Text:SetAllPoints()
 	loc_panel.Text:SetJustifyH("CENTER")
 	loc_panel.Text:SetJustifyV("MIDDLE")
@@ -151,8 +151,8 @@ local function CreateCoordPanels()
 
 	-- X Coord panel
 	local coordsX = CreateFrame('Frame', "NB_XCoords", NB_LocationLitePanel)
-	coordsX:Width(COORDS_WIDTH)
-	coordsX:Height(db.height or 21)
+	coordsX:SetWidth(COORDS_WIDTH)
+	coordsX:SetHeight(db.height or 21)
 	coordsX.Text = coordsX:CreateFontString(nil, "LOW")
 	coordsX.Text:SetAllPoints()
 	coordsX.Text:SetJustifyH("CENTER")
@@ -161,8 +161,8 @@ local function CreateCoordPanels()
 
 	-- Y Coord panel
 	local coordsY = CreateFrame('Frame', "NB_YCoords", NB_LocationLitePanel)
-	coordsY:Width(COORDS_WIDTH)
-	coordsY:Height(db.height or 21)
+	coordsY:SetWidth(COORDS_WIDTH)
+	coordsY:SetHeight(db.height or 21)
 	coordsY.Text = coordsY:CreateFontString(nil, "LOW")
 	coordsY.Text:SetAllPoints()
 	coordsY.Text:SetJustifyH("CENTER")
@@ -177,13 +177,13 @@ function mod:PanelsHeight()
 	local db = E.db.NutsAndBolts.LocationLite
 
 	if db.largeHeight then
-		NB_LocationLitePanel:Height((db.height)+6)
+		NB_LocationLitePanel:SetHeight((db.height)+6)
 	else
-		NB_LocationLitePanel:Height(db.height)
+		NB_LocationLitePanel:SetHeight(db.height)
 	end
 	
-	NB_XCoords:Height(db.height)
-	NB_YCoords:Height(db.height)
+	NB_XCoords:SetHeight(db.height)
+	NB_YCoords:SetHeight(db.height)
 end
 
 -- Fonts
@@ -236,8 +236,8 @@ function mod:ToggleShadows()
 		SPACING = 1
 	end
 	
-	NB_XCoords:Point('RIGHT', NB_LocationLitePanel, 'LEFT', -SPACING, 0)
-	NB_YCoords:Point('LEFT', NB_LocationLitePanel, 'RIGHT', SPACING, 0)
+	NB_XCoords:SetPoint('RIGHT', NB_LocationLitePanel, 'LEFT', -SPACING, 0)
+	NB_YCoords:SetPoint('LEFT', NB_LocationLitePanel, 'RIGHT', SPACING, 0)
 end
 
 function mod:ToggleAsphyxiaStyle()
@@ -248,23 +248,23 @@ function mod:ToggleAsphyxiaStyle()
 		SPACING = -4
 		NB_XCoords:SetFrameLevel(NB_LocationLitePanel:GetFrameLevel()-1)
 		NB_YCoords:SetFrameLevel(NB_LocationLitePanel:GetFrameLevel()-1)
-		NB_XCoords.Text:Point("CENTER", 0, 0)
-		NB_YCoords.Text:Point("CENTER", 2, 0)
+		NB_XCoords.Text:SetPoint("CENTER", 0, 0)
+		NB_YCoords.Text:SetPoint("CENTER", 2, 0)
 		db.largeHeight = true
 		db.shadows = true
 		db.transparency = false
 	else
 		SPACING = 1
-		NB_XCoords.Text:Point("CENTER", 1, 0)
-		NB_YCoords.Text:Point("CENTER", 1, 0)
+		NB_XCoords.Text:SetPoint("CENTER", 1, 0)
+		NB_YCoords.Text:SetPoint("CENTER", 1, 0)
 	end
 
 	self:ToggleShadows()
 	self:PanelsHeight()
 	self:ToggleTransparency()
 	
-	NB_XCoords:Point('RIGHT', NB_LocationLitePanel, 'LEFT', -SPACING, 0)
-	NB_YCoords:Point('LEFT', NB_LocationLitePanel, 'RIGHT', SPACING, 0)
+	NB_XCoords:SetPoint('RIGHT', NB_LocationLitePanel, 'LEFT', -SPACING, 0)
+	NB_YCoords:SetPoint('LEFT', NB_LocationLitePanel, 'RIGHT', SPACING, 0)
 end
 
 function mod:UpdateCoords()
@@ -324,16 +324,16 @@ function mod:UpdateLocation()
 	local autowidth = (NB_LocationLitePanel.Text:GetStringWidth() + 18)
 	
 	if db.autoResize then
-		NB_LocationLitePanel:Width(autowidth)
-		NB_LocationLitePanel.Text:Width(autowidth)
+		NB_LocationLitePanel:SetWidth(autowidth)
+		NB_LocationLitePanel.Text:SetWidth(autowidth)
 	else
-		NB_LocationLitePanel:Width(fixedwidth)
+		NB_LocationLitePanel:SetWidth(fixedwidth)
 		if db.truncateText then
-			NB_LocationLitePanel.Text:Width(fixedwidth-18)
+			NB_LocationLitePanel.Text:SetWidth(fixedwidth-18)
 			NB_LocationLitePanel.Text:SetWordWrap(false)
 		elseif autowidth > fixedwidth then
-			NB_LocationLitePanel:Width(autowidth)
-			NB_LocationLitePanel.Text:Width(autowidth)
+			NB_LocationLitePanel:SetWidth(autowidth)
+			NB_LocationLitePanel.Text:SetWidth(autowidth)
 		end
 	end
 end
@@ -353,11 +353,11 @@ end
 function mod:ToggleCoordsDigit()
 	local db = E.db.NutsAndBolts.LocationLite
 	if db.doubleDigit then
-		NB_XCoords:Width(COORDS_WIDTH*1.5)
-		NB_YCoords:Width(COORDS_WIDTH*1.5)
+		NB_XCoords:SetWidth(COORDS_WIDTH*1.5)
+		NB_YCoords:SetWidth(COORDS_WIDTH*1.5)
 	else
-		NB_XCoords:Width(COORDS_WIDTH)
-		NB_YCoords:Width(COORDS_WIDTH)
+		NB_XCoords:SetWidth(COORDS_WIDTH)
+		NB_YCoords:SetWidth(COORDS_WIDTH)
 	end
 end
 
