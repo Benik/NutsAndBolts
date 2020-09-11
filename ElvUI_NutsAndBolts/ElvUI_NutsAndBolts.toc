@@ -1,4 +1,4 @@
-## Interface: 90001
+## Interface: 90002
 ## Author: Benik
 ## Version: 1.20
 ## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r
