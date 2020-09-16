@@ -44,10 +44,6 @@ L["Update Timer"] = true
 L["Use Custom Location Color"] = true
 L["Zone and Subzone"] = true
 
--- Databar Colors
-L['DataBar Colors'] = true
-L["This module can alter ElvUI Databar statusbars to any color"] = true
-
 -- ElvUI Panels
 L['ElvUI Panels'] = true
 L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"] = true
