@@ -26,7 +26,7 @@ function mod:TopPanelLayout()
 		panel.shadow:Hide()
 	end
 
-	panel:SetHeight(db.height or 22)
+	panel:Height(db.height or 22)
 
 	if not ENB.BU then return end
 	if E.db.benikui.general.benikuiStyle then
@@ -54,7 +54,7 @@ function mod:BottomPanelLayout()
 		panel.shadow:Hide()
 	end
 
-	panel:SetHeight(db.height or 22)
+	panel:Height(db.height or 22)
 
 	if not ENB.BU then return end
 	if E.db.benikui.general.benikuiStyle then
