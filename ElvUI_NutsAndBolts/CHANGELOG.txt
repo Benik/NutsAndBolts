@@ -1,3 +1,7 @@
+1.21 (Oct 13, 2020)
+*Release for Shadowlands prepatch and ElvUI 12.00
+*Removed Databar Colors module. It's in ElvUI now
+
 1.20 (Jul 9, 2020)
 *Fixed DataText Colors module
 *Fixed DataText color not applying after a reload
