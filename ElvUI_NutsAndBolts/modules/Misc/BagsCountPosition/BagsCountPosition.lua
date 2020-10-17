@@ -32,7 +32,7 @@ function mod:UpdateCountPosition()
 				local slot = bagFrame.Bags[bagID][slotID]
 				if slot and slot.Count then
 					slot.Count:ClearAllPoints()
-					slot.Count:SetPoint(E.db.NutsAndBolts.BagsCountPosition.countPosition, x, y);
+					slot.Count:Point(E.db.NutsAndBolts.BagsCountPosition.countPosition, x, y);
 				end
 			end
 		end

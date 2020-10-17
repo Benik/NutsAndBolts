@@ -1,6 +1,6 @@
 ## Interface: 90001
 ## Author: Benik
-## Version: 1.20
+## Version: 1.21
 ## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
@@ -12,3 +12,4 @@
 locales\load_locales.xml
 core.lua
 modules\load_modules.xml
+
