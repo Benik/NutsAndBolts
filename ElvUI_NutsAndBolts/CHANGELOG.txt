@@ -1,3 +1,6 @@
+1.22 (Nov 23, 2020)
+*toc update for 9.02
+
 1.21 (Oct 13, 2020)
 *Release for Shadowlands prepatch and ElvUI 12.00
 *Removed Databar Colors module. It's in ElvUI now
