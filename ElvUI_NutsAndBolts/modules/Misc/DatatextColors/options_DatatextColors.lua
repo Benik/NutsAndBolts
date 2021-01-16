@@ -61,6 +61,7 @@ local function ConfigTable()
 							[1] = CLASS_COLORS,
 							[2] = CUSTOM,
 							[3] = L["Value Color"],
+							[4] = L['Covenant Color'],
 						},
 						get = function(info) return E.db.NutsAndBolts["DataTextColors"][ info[#info] ] end,
 						set = function(info, value) E.db.NutsAndBolts["DataTextColors"][ info[#info] ] = value; mod:ColorFont(); end,
@@ -69,7 +70,7 @@ local function ConfigTable()
 						order = 2,
 						type = "color",
 						name = COLOR_PICKER,
-						disabled = function() return E.db.NutsAndBolts.DataTextColors.customColor == 1 or E.db.NutsAndBolts.DataTextColors.customColor == 3 end,
+						disabled = function() return E.db.NutsAndBolts.DataTextColors.customColor ~= 2 end,
 						get = function(info)
 							local t = E.db.NutsAndBolts["DataTextColors"][ info[#info] ]
 							return t.r, t.g, t.b, t.a
