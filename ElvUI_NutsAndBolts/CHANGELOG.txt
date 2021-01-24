@@ -1,3 +1,6 @@
+1.23 (Jan 24, 2021)
+*Added Covenant colors for the Datatexts
+
 1.22 (Nov 23, 2020)
 *toc update for 9.02
 
