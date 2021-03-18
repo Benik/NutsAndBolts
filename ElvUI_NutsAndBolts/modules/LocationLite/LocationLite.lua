@@ -411,7 +411,7 @@ function mod:StyleAndShadows()
 	if not ENB.BU then return end
 	for _, frame in pairs(panels) do
 		if frame then
-			frame:Style('Outside')
+			frame:BuiStyle('Outside')
 		end
 	end
 end
