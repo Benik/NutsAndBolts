@@ -58,7 +58,7 @@ local function ConfigTable()
 						name = L["Position"],
 						values = positionValues,
 						get = function(info) return E.db.NutsAndBolts["BagsCountPosition"][ info[#info] ] end,
-						set = function(info, value) E.db.NutsAndBolts["BagsCountPosition"][ info[#info] ] = value; B:UpdateCountDisplay(); end,
+						set = function(info, value) E.db.NutsAndBolts["BagsCountPosition"][ info[#info] ] = value; B:UpdateItemDisplay(); end,
 					},
 				},
 			},

@@ -44,7 +44,7 @@ end
 
 function mod:Initialize()
 	self:UpdateCountPosition()
-	hooksecurefunc(B, 'UpdateCountDisplay', mod.UpdateCountPosition)
+	hooksecurefunc(B, 'UpdateItemDisplay', mod.UpdateCountPosition)
 
 	self.initialized = true
 end
