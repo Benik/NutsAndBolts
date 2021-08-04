@@ -13,7 +13,7 @@ function mod:UpdateLocation()
 	local db = E.db.NutsAndBolts.ObjectiveTracker
 	local _, _, difficulty = GetInstanceInfo();
 
-	if db.allInstances and IsInInstance() and (db.achievement == false or GetNumTrackedAchievements() == 0) and (db.mythic == false or (difficulty ~= 8)) then
+	if db.allInstances and IsInInstance() and (db.achievement == false or GetNumTrackedAchievements() == 0) and (db.mythic == false or (difficulty ~= 8) and (db.torghast == false or not IsInJailersTower())) then
 		ObjectiveTrackerFrame:Hide()
 	else
 		ObjectiveTrackerFrame:Show()

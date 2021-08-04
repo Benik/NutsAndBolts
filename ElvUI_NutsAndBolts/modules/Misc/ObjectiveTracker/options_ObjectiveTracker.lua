@@ -49,15 +49,22 @@ local function ConfigTable()
 						name = L["Hide when in an instance"],
 						width = "full",
 					},
-					mythic = {
+					torghast = {
 						order = 4,
+						type = 'toggle',
+						name = L["Don't hide in Torghast"],
+						width = "full",
+						disabled = function() return not E.db.NutsAndBolts.ObjectiveTracker.allInstances end,
+					},
+					mythic = {
+						order = 5,
 						type = 'toggle',
 						name = L["Don't hide on Mythic+"],
 						width = "full",
 						disabled = function() return not E.db.NutsAndBolts.ObjectiveTracker.allInstances end,
 					},
 					achievement = {
-						order = 5,
+						order = 6,
 						type = 'toggle',
 						name = L["Don't hide when an achievement is tracked"],
 						width = "full",

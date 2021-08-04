@@ -63,5 +63,6 @@ L["This module can move the Bag Item Count Position"] = true
 L['Objective Tracker'] = true
 L["This module can toggle Objective Tracker when in an instance"] = true
 L["Hide when in an instance"] = true
+L["Don't hide in Torghast"] = true
 L["Don't hide on Mythic+"] = true
 L["Don't hide when an achievement is tracked"] = true
