@@ -1,3 +1,6 @@
+1.28 (Aug 4, 2021)
+*Add Torghast exception to hiding Objective Tracker. Credit: Cilraaz
+
 1.27 (Jul 26, 2021)
 *Fixed BagsCountPosition Module
 

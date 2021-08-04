@@ -1,6 +1,6 @@
 ## Interface: 90100
 ## Author: Benik
-## Version: 1.27
+## Version: 1.28
 ## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
@@ -12,4 +12,3 @@
 locales\load_locales.xml
 core.lua
 modules\load_modules.xml
-
