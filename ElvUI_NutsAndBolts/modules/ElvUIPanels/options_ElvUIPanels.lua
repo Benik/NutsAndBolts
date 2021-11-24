@@ -63,7 +63,7 @@ local function ConfigTable()
 						name = SHOW,
 						desc = L["Display a panel across the top of the screen. This is for cosmetic only."],
 						get = function(info) return E.db.general.topPanel end,
-						set = function(info, value) E.db.general.topPanel = value; E:GetModule('Layout'):TopPanelVisibility() end
+						set = function(info, value) E.db.general.topPanel = value; E:GetModule('Layout'):UpdateTopPanel() end
 					},
 					spacer = {
 						order = 2,
@@ -114,7 +114,7 @@ local function ConfigTable()
 						name = SHOW,
 						desc = L["Display a panel across the bottom of the screen. This is for cosmetic only."],
 						get = function(info) return E.db.general.bottomPanel end,
-						set = function(info, value) E.db.general.bottomPanel = value; E:GetModule('Layout'):BottomPanelVisibility() end
+						set = function(info, value) E.db.general.bottomPanel = value; E:GetModule('Layout'):UpdateBottomPanel() end
 					},
 					spacer = {
 						order = 2,
