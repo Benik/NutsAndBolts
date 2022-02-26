@@ -1,6 +1,6 @@
-## Interface: 90100
+## Interface: 90200
 ## Author: Benik
-## Version: 1.28
+## Version: 1.30
 ## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
