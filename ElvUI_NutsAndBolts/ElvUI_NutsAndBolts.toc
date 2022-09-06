@@ -11,4 +11,4 @@
 
 locales\load_locales.xml
 core.lua
-modules\load_modules.xml
+modules\load_modules_retail.xml
