@@ -16,6 +16,20 @@ local function ConfigTable()
 		description = L["It looks like ElvUI_DatatextColors addon is loaded. It is strongly suggested to disable it, by clicking the button below.\n|cff00c0faNOTE:|r The standalone ElvUI_DatatextColors addon is not gonna be available anymore on Tukui.org."]
 	end
 
+	local values = {
+		[1] = CLASS_COLORS,
+		[2] = CUSTOM,
+		[3] = L["Value Color"],
+		[4] = L['Covenant Color'],
+	}
+	if not E.Retail then
+		values = {
+			[1] = CLASS_COLORS,
+			[2] = CUSTOM,
+			[3] = L["Value Color"],
+		}
+	end
+
 	E.Options.args.NutsAndBolts.args.misc.args.DataTextColors = {
 		order = 10,
 		type = 'group',
@@ -57,12 +71,7 @@ local function ConfigTable()
 						order = 1,
 						type = "select",
 						name = COLOR,
-						values = {
-							[1] = CLASS_COLORS,
-							[2] = CUSTOM,
-							[3] = L["Value Color"],
-							[4] = L['Covenant Color'],
-						},
+						values = values,
 						get = function(info) return E.db.NutsAndBolts["DataTextColors"][ info[#info] ] end,
 						set = function(info, value) E.db.NutsAndBolts["DataTextColors"][ info[#info] ] = value; mod:ColorFont(); end,
 					},

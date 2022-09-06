@@ -54,10 +54,6 @@ L["Are you sure you want to disable ElvUI_DTColors?"] = true
 L["This module can alter all ElvUI DataText text color"] = true
 L["It looks like ElvUI_DatatextColors addon is loaded. It is strongly suggested to disable it, by clicking the button below.\n|cff00c0faNOTE:|r The standalone ElvUI_DatatextColors addon is not gonna be available anymore on Tukui.org."] = true
 
--- BagsCountPosition
-L['Bags Count Position'] = true
-L["This module can move the Bag Item Count Position"] = true
-
 -- ObjectiveTracker
 L['Objective Tracker'] = true
 L["This module can toggle Objective Tracker when in an instance"] = true

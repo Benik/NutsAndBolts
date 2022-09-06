@@ -1,0 +1,14 @@
+## Interface: 30400
+## Author: Benik
+## Version: 1.31
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bWrath|r
+## Notes: Various ElvUI Enhancements
+## RequiredDeps: ElvUI
+## DefaultState: Enabled
+## OptionalDeps: SharedMedia, ElvUI_BenikUI
+## X-Tukui-ProjectID: 9
+## X-Tukui-ProjectFolders: ElvUI_NutsAndBolts
+
+locales\load_locales.xml
+core.lua
+modules\load_modules.xml
