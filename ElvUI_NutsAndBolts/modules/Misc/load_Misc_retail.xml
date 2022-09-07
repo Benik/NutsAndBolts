@@ -1,3 +1,4 @@
 ﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">	
 	<Include file="DatatextColors\load_DatatextColors.xml"/>
+	<Include file="ObjectiveTracker\load_ObjectiveTracker.xml"/>
 </Ui>

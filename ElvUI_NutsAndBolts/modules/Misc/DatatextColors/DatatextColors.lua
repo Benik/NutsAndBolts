@@ -3,12 +3,11 @@ local ENB = E:GetModule("NutsAndBolts");
 local DT = E:GetModule('DataTexts');
 local mod = E:NewModule('NB_DataTextColors', 'AceEvent-3.0');
 
-local C_Covenants_GetCovenantData = C_Covenants.GetCovenantData
-local C_Covenants_GetActiveCovenantID = C_Covenants.GetActiveCovenantID
-
 local classColor = E:ClassColor(E.myclass, true)
 
 local function getCovenantColor()
+	local C_Covenants_GetCovenantData = C_Covenants.GetCovenantData
+	local C_Covenants_GetActiveCovenantID = C_Covenants.GetActiveCovenantID
 	local covenantData = C_Covenants_GetCovenantData(C_Covenants_GetActiveCovenantID())
 	local kit = covenantData and covenantData.textureKit or nil
 	local r, g, b
@@ -42,8 +41,11 @@ function mod:ColorFont()
 					r, g, b = ENB:unpackColor(db.userColor)
 				elseif db.customColor == 3 then
 					r, g, b = ENB:unpackColor(E.db.general.valuecolor)
-				else
+				elseif E.Retail and db.customColor == 4 then
 					r, g, b = getCovenantColor()
+				else
+					-- default to classColor if options broke
+					r, g, b = classColor.r, classColor.g, classColor.b
 				end
 				panel.dataPanels[i].text:SetTextColor(r, g, b)
 			end

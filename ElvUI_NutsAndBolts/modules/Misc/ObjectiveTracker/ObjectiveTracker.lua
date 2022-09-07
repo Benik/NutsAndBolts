@@ -21,8 +21,8 @@ function mod:UpdateLocation()
 end
 
 function mod:Initialize()
-    self:RegisterEvent("CHALLENGE_MODE_RESET", mod.UpdateLocation)
-    self:RegisterEvent("CHALLENGE_MODE_START", mod.UpdateLocation)
+	self:RegisterEvent("CHALLENGE_MODE_RESET", mod.UpdateLocation)
+	self:RegisterEvent("CHALLENGE_MODE_START", mod.UpdateLocation)
 	self:RegisterEvent("PLAYER_ENTERING_WORLD", mod.UpdateLocation)
 	self:RegisterEvent("ZONE_CHANGED_NEW_AREA", mod.UpdateLocation)
 	self.initialized = true

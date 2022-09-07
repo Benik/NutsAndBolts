@@ -1,0 +1,5 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">	
+	<Include file="LocationLite\load_LocationLite.xml"/>
+	<Include file="ElvUIPanels\load_ElvUIPanels.xml"/>
+	<Include file="Misc\load_Misc_retail.xml"/>
+</Ui>
