@@ -6,8 +6,6 @@
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
 ## OptionalDeps: SharedMedia, ElvUI_BenikUI
-## X-Tukui-ProjectID: 9
-## X-Tukui-ProjectFolders: ElvUI_NutsAndBolts
 
 locales\load_locales.xml
 core.lua
