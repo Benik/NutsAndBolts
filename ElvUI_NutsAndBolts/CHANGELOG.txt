@@ -1,3 +1,6 @@
+1.32 (Oct 9, 2022)
+*AiO version
+
 1.31 (Jun 1st, 2022)
 *toc update for patch 9.2.5
 
