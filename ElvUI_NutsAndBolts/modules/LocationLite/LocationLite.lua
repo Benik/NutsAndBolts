@@ -105,7 +105,7 @@ end
 local function CreateMainPanel()
 	local db = E.db.NutsAndBolts.LocationLite
 
-	local loc_panel = CreateFrame('Frame', 'NB_LocationLitePanel', E.UIParent, 'BackdropTemplate')
+	local loc_panel = CreateFrame('Frame', 'NB_LocationLitePanel', E.UIParent)
 	loc_panel:Width(db.width or 200)
 	loc_panel:Height(db.height or 21)
 	loc_panel:Point('TOP', E.UIParent, 'TOP', 0, -E.mult -22)
@@ -116,7 +116,7 @@ local function CreateMainPanel()
 	tinsert(panels, NB_LocationLitePanel)
 
 	-- Location Text
-	loc_panel.Text = loc_panel:CreateFontString(nil, "LOW")
+	loc_panel.Text = loc_panel:CreateFontString(nil, "BORDER")
 	loc_panel.Text:Point("CENTER", 0, 0)
 	loc_panel.Text:SetAllPoints()
 	loc_panel.Text:SetJustifyH("CENTER")
@@ -150,20 +150,20 @@ local function CreateCoordPanels()
 	local db = E.db.NutsAndBolts.LocationLite
 
 	-- X Coord panel
-	local coordsX = CreateFrame('Frame', "NB_XCoords", NB_LocationLitePanel, 'BackdropTemplate')
+	local coordsX = CreateFrame('Frame', "NB_XCoords", NB_LocationLitePanel)
 	coordsX:Width(COORDS_WIDTH)
 	coordsX:Height(db.height or 21)
-	coordsX.Text = coordsX:CreateFontString(nil, "LOW")
+	coordsX.Text = coordsX:CreateFontString(nil, "BORDER")
 	coordsX.Text:SetAllPoints()
 	coordsX.Text:SetJustifyH("CENTER")
 	coordsX.Text:SetJustifyV("MIDDLE")
 	tinsert(panels, NB_XCoords)
 
 	-- Y Coord panel
-	local coordsY = CreateFrame('Frame', "NB_YCoords", NB_LocationLitePanel, 'BackdropTemplate')
+	local coordsY = CreateFrame('Frame', "NB_YCoords", NB_LocationLitePanel)
 	coordsY:Width(COORDS_WIDTH)
 	coordsY:Height(db.height or 21)
-	coordsY.Text = coordsY:CreateFontString(nil, "LOW")
+	coordsY.Text = coordsY:CreateFontString(nil, "BORDER")
 	coordsY.Text:SetAllPoints()
 	coordsY.Text:SetJustifyH("CENTER")
 	coordsY.Text:SetJustifyV("MIDDLE")
