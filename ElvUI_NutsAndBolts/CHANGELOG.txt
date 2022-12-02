@@ -1,3 +1,7 @@
+1.36 (Dec 2, 2022)
+*Removed Covenant Color option
+*Fixed Datatext Colors not applying when creating a Custom Datatext
+
 1.35 (Nov 15, 2022)
 *toc update for patch v10.02
 

@@ -48,7 +48,6 @@ L['ElvUI Panels'] = true
 L["This module can alter ElvUI Top and Bottom Panels Transparency and Height"] = true
 
 -- DataText Colors
-L['Covenant Color'] = true
 L['DataText Color'] = true
 L["Are you sure you want to disable ElvUI_DTColors?"] = true
 L["This module can alter all ElvUI DataText text color"] = true
