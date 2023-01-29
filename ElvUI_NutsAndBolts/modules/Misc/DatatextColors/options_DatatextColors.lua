@@ -20,15 +20,7 @@ local function ConfigTable()
 		[1] = CLASS_COLORS,
 		[2] = CUSTOM,
 		[3] = L["Value Color"],
-		[4] = L['Covenant Color'],
 	}
-	if not E.Retail then
-		values = {
-			[1] = CLASS_COLORS,
-			[2] = CUSTOM,
-			[3] = L["Value Color"],
-		}
-	end
 
 	E.Options.args.NutsAndBolts.args.misc.args.DataTextColors = {
 		order = 10,
