@@ -24,18 +24,12 @@ function mod:ColorFont()
 				panel.dataPanels[i].text:SetTextColor(r, g, b)
 			end
 		end
-		DT:UpdatePanelInfo(panelName, panel)
 	end
 end
 
-function mod:PLAYER_ENTERING_WORLD()
-	self:ColorFont()
-	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-end
-
 function mod:Initialize()
-	self:RegisterEvent('PLAYER_ENTERING_WORLD')
-	self.initialized = true
+	mod.initialized = true
+	mod:ColorFont()
 	hooksecurefunc(DT, 'LoadDataTexts', mod.ColorFont)
 	hooksecurefunc(DT, 'UpdatePanelAttributes', mod.ColorFont)
 end
