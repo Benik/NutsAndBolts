@@ -28,14 +28,10 @@ function mod:ColorFont()
 	end
 end
 
-function mod:PLAYER_ENTERING_WORLD()
-	self:ColorFont()
-	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-end
-
 function mod:Initialize()
-	self:RegisterEvent('PLAYER_ENTERING_WORLD')
-	self.initialized = true
+	mod.initialized = true
+	E:Delay(3, mod.ColorFont)
+	--mod:ColorFont()
 	hooksecurefunc(DT, 'LoadDataTexts', mod.ColorFont)
 	hooksecurefunc(DT, 'UpdatePanelAttributes', mod.ColorFont)
 end
