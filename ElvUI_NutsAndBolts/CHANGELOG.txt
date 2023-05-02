@@ -1,3 +1,10 @@
+v1.40 (May 2, 2023)
+toc update for patch 10.1
+Added Icon Texture
+
+v1.39 (Mar 21, 2023)
+toc update for patch 10.0.7
+
 1.38 (Feb 9, 2023)
 Fixed the Datatexts error after ElvUI v13.25.
 
