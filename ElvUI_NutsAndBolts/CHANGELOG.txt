@@ -1,6 +1,5 @@
-v1.40 (May 2, 2023)
-toc update for patch 10.1
-Added Icon Texture
+v1.41 (Jul 12, 2023)
+toc bump for WoW 10.1.5
 
 v1.39 (Mar 21, 2023)
 toc update for patch 10.0.7
