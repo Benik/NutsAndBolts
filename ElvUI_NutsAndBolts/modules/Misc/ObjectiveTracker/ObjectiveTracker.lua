@@ -4,7 +4,7 @@ local mod = E:NewModule('NB_ObjectiveTracker', 'AceEvent-3.0');
 
 local GetInstanceInfo = GetInstanceInfo
 local IsInInstance = IsInInstance
-local GetNumTrackedAchievements = GetNumTrackedAchievements
+local C_ContentTracking = C_ContentTracking
 local UnitOnTaxi = UnitOnTaxi
 
 function mod:UpdateLocation()
@@ -13,7 +13,7 @@ function mod:UpdateLocation()
 	local db = E.db.NutsAndBolts.ObjectiveTracker
 	local _, _, difficulty = GetInstanceInfo();
 
-	if db.allInstances and IsInInstance() and (db.achievement == false or GetNumTrackedAchievements() == 0) and (db.mythic == false or (difficulty ~= 8) and (db.torghast == false or not IsInJailersTower())) then
+	if db.allInstances and IsInInstance() and (db.achievement == false or #C_ContentTracking.GetTrackedIDs(Enum.ContentTrackingType.Achievement) == 0) and (db.mythic == false or (difficulty ~= 8) and (db.torghast == false or not IsInJailersTower())) then
 		ObjectiveTrackerFrame:Hide()
 	else
 		ObjectiveTrackerFrame:Show()
