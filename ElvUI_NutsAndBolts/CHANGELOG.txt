@@ -1,3 +1,6 @@
+v1.43 (Nov 9, 2023)
+toc update
+
 v1.42 (Sep 28, 2023)
 toc updates
 fix Objective Tracker Hiding Tracked Achievements error. Credit: thurin
