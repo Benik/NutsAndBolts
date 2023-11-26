@@ -24,14 +24,15 @@ function mod:ColorFont()
 				panel.dataPanels[i].text:SetTextColor(r, g, b)
 			end
 		end
-		DT:UpdatePanelInfo(panelName, panel)
+        if panelName and panel then
+            DT:UpdatePanelInfo(panelName, panel)
+        end
 	end
 end
 
 function mod:Initialize()
 	mod.initialized = true
 	E:Delay(3, mod.ColorFont)
-	--mod:ColorFont()
 	hooksecurefunc(DT, 'LoadDataTexts', mod.ColorFont)
 	hooksecurefunc(DT, 'UpdatePanelAttributes', mod.ColorFont)
 end
