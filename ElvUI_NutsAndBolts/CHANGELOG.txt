@@ -1,3 +1,6 @@
+v1.44 (Nov 26, 2023)
+Prevent an error when ElvUI plugins create Datatexts, during their install routines. (Credit: Eltreum)
+
 v1.43 (Nov 9, 2023)
 toc update
 
