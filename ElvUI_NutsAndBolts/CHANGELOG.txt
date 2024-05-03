@@ -1,3 +1,7 @@
+v1.46 (May 3, 2024)
+toc updates for cata. Credit: thurin
+Fixed a Strata glitch with Top and Bottom Elvui panels, after a pet battle. This should fix issue #3
+
 v1.45 (Jan 26, 2024)
 toc update
 
