@@ -4,6 +4,7 @@ local mod = E:NewModule('NB_ElvUIPanels');
 
 local function Panel_OnShow(self)
 	self:SetFrameLevel(0)
+	self:SetFrameStrata('BACKGROUND')
 end
 
 local function Style_OnShow(self)
