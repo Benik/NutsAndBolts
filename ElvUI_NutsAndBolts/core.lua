@@ -2,6 +2,8 @@ local E, L, V, P, G = unpack(ElvUI);
 local EP = LibStub("LibElvUIPlugin-1.0")
 local ENB = E:NewModule("NutsAndBolts", "AceHook-3.0", "AceEvent-3.0", "AceTimer-3.0");
 local addon, ns = ...
+
+local GetAddOnMetadata = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata
  
 ENB.Version = GetAddOnMetadata("ElvUI_NutsAndBolts", "Version")
 ENB.Title = format('|cff00c0fa%s|r|cffffff00%s|r|cff00c0fa%s|r', "Nuts", "&", "Bolts")
@@ -19,15 +21,11 @@ function ENB:unpackColor(color)
 	return color.r, color.g, color.b, color.a
 end
 
-function ENB:IsAddOnEnabled(addon) -- Credit: Azilroka
-	return GetAddOnEnableState(E.myname, addon) == 2
-end
-
 -- Check other addons
-ENB.LL = ENB:IsAddOnEnabled('ElvUI_LocLite')
-ENB.LP = ENB:IsAddOnEnabled('ElvUI_LocPlus')
-ENB.BU = ENB:IsAddOnEnabled('ElvUI_BenikUI')
-ENB.DT = ENB:IsAddOnEnabled('ElvUI_DTColors')
+ENB.LL = E:IsAddOnEnabled('ElvUI_LocLite')
+ENB.LP = E:IsAddOnEnabled('ElvUI_LocPlus')
+ENB.BU = E:IsAddOnEnabled('ElvUI_BenikUI')
+ENB.DT = E:IsAddOnEnabled('ElvUI_DTColors')
 
 -- Options
 function ENB:ConfigTable()
