@@ -2,6 +2,8 @@ local E, L, V, P, G = unpack(ElvUI);
 local ENB = E:GetModule("NutsAndBolts");
 local mod = E:GetModule('NB_DataTextColors');
 
+local DisableAddOn = (C_AddOns and C_AddOns.DisableAddOn) or DisableAddOn
+
 -- Defaults
 P["NutsAndBolts"]["DataTextColors"] = {
 	['enable'] = true,

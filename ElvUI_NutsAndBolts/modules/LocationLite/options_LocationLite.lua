@@ -5,6 +5,9 @@ local mod = E:GetModule('NB_LocationLite');
 local format = string.format
 local SHOW, COLOR, CLASS_COLORS, CUSTOM, COLOR_PICKER = SHOW, COLOR, CLASS_COLORS, CUSTOM, COLOR_PICKER
 
+local DisableAddOn = (C_AddOns and C_AddOns.DisableAddOn) or DisableAddOn
+
+
 -- GLOBALS: AceGUIWidgetLSMlists
 
 -- Defaults
