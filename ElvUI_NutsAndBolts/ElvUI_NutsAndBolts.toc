@@ -7,6 +7,7 @@
 ## DefaultState: Enabled
 ## OptionalDeps: SharedMedia, ElvUI_BenikUI
 ## IconTexture: Interface\ICONS\INV_Engineering_90_Bolts
+## X-Wago-ID: YK9ELwKL
 
 locales\load_locales.xml
 core.lua
