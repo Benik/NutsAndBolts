@@ -1,6 +1,6 @@
-## Interface: 110100
+## Interface: 110105
 ## Author: Benik
-## Version: 1.50
+## Version: 1.51
 ## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
