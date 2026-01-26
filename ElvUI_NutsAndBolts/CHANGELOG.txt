@@ -1,3 +1,6 @@
+v2.00 (Jan 26, 2026)
+toc updates for all game versions. Credit: thurin
+
 v1.51 (May 11, 2025)
 toc updates
 Added WagoID
