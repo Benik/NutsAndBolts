@@ -1,7 +1,6 @@
 local E, L, V, P, G = unpack(ElvUI);
 local ENB = E:GetModule("NutsAndBolts");
 local mod = E:NewModule('NB_LocationLite', 'AceTimer-3.0');
-local LSM = LibStub("LibSharedMedia-3.0");
 
 local format, pairs, tinsert = string.format, pairs, table.insert
 
@@ -191,7 +190,7 @@ function mod:CoordPanelFont()
 	local db = E.db.NutsAndBolts.LocationLite
 
 	for _, frame in pairs(panels) do
-		frame.Text:SetFont(LSM:Fetch("font", db.font), db.fontSize, db.fontFlags)
+		frame.Text:SetFont(db.font, db.fontSize, db.fontFlags)
 	end	
 
 end
