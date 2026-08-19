@@ -1,7 +1,7 @@
-## Interface: 40402
+## Interface: 20506
 ## Author: Benik
-## Version: 1.51
-## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bCataclysm|r
+## Version: 2.01
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bMists|r
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
