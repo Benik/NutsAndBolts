@@ -5,7 +5,7 @@ local mod = E:NewModule('NB_LocationLite', 'AceTimer-3.0');
 local format, pairs, tinsert = string.format, pairs, table.insert
 
 local ToggleFrame = ToggleFrame
-local GetZonePVPInfo = GetZonePVPInfo
+local GetZonePVPInfo = C_PvP.GetZonePVPInfo or GetZonePVPInfo
 local IsInInstance = IsInInstance
 local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
 local C_Map_GetPlayerMapPosition = C_Map.GetPlayerMapPosition
@@ -190,7 +190,7 @@ function mod:CoordPanelFont()
 	local db = E.db.NutsAndBolts.LocationLite
 
 	for _, frame in pairs(panels) do
-		frame.Text:SetFont(db.font, db.fontSize, db.fontFlags)
+		frame.Text:FontTemplate( db.font, db.fontSize, db.fontFlags)
 	end	
 
 end
@@ -254,6 +254,7 @@ function mod:ToggleAsphyxiaStyle()
 		db.transparency = false
 	else
 		SPACING = 1
+		db.largeHeight = false
 		NB_XCoords.Text:Point("CENTER", 1, 0)
 		NB_YCoords.Text:Point("CENTER", 1, 0)
 	end

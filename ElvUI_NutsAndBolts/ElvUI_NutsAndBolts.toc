@@ -1,7 +1,12 @@
-## Interface: 120100
+## Interface: 11509, 16001, 20506, 50504, 120105
 ## Author: Benik
 ## Version: 2.01
-## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bMidnight|r[AllowLoadGameType standard]
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bForever|r [AllowLoadGameType camelot][ExcludeLoadGameType standard, classic]
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bMists|r [AllowLoadGameType mists]
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bTBC|r [AllowLoadGameType tbc]
+## Title: |cff1784d1ElvUI|r |cff00c0faNuts|r|cffffff00&|r|cff00c0faBolts|r |cfd9b9b9bClassic|r [AllowLoadGameType vanilla]
+
 ## Notes: Various ElvUI Enhancements
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
@@ -11,4 +16,5 @@
 
 locales\load_locales.xml
 core.lua
-modules\load_modules_retail.xml
+modules\load_modules_retail.xml [AllowLoadGameType standard][ExcludeLoadGameType classic]
+modules\load_modules.xml [AllowLoadGameType vanilla, tbc, mists, camelot]
