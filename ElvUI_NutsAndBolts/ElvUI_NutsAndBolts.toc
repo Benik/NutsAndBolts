@@ -11,7 +11,7 @@
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
 ## OptionalDeps: SharedMedia, ElvUI_BenikUI
-## IconTexture: Interface\ICONS\INV_Engineering_90_Bolts
+## IconTexture: Interface\AddOns\ElvUI_NutsAndBolts\media\inv_engineering_90_bolts
 ## X-Wago-ID: YK9ELwKL
 
 locales\load_locales.xml
